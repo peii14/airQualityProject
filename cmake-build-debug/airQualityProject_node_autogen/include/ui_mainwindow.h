@@ -9,14 +9,22 @@
 #ifndef UI_MAINWINDOW_H
 #define UI_MAINWINDOW_H
 
+#include <QtCore/QDate>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDateTimeEdit>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include "QtQuickWidgets/QQuickWidget"
@@ -28,6 +36,30 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QQuickWidget *quickWidget;
+    QLabel *airCondition;
+    QLabel *label;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QLabel *label_4;
+    QLabel *label_2;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *displaySO2;
+    QLabel *displayPM10;
+    QLabel *displayNO2;
+    QLabel *displayO3;
+    QGroupBox *groupBox;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *gridLayout_2;
+    QLabel *label_3;
+    QLabel *label_7;
+    QDateTimeEdit *endInterval;
+    QDateTimeEdit *startInterval;
+    QGroupBox *groupBox_2;
+    QSpinBox *sensorSpinBox;
+    QPushButton *searchPushButton;
+    QTableView *approximateTable;
+    QLabel *label_8;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -36,17 +68,138 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1109, 823);
+        MainWindow->resize(1326, 893);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         quickWidget = new QQuickWidget(centralWidget);
         quickWidget->setObjectName(QStringLiteral("quickWidget"));
-        quickWidget->setGeometry(QRect(0, 0, 974, 713));
+        quickWidget->setGeometry(QRect(0, 0, 961, 691));
         quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+        airCondition = new QLabel(centralWidget);
+        airCondition->setObjectName(QStringLiteral("airCondition"));
+        airCondition->setGeometry(QRect(1010, 30, 301, 121));
+        QFont font;
+        font.setPointSize(37);
+        font.setBold(true);
+        font.setWeight(75);
+        airCondition->setFont(font);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(970, 150, 111, 41));
+        QFont font1;
+        font1.setPointSize(17);
+        label->setFont(font1);
+        gridLayoutWidget = new QWidget(centralWidget);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(970, 190, 351, 161));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label_4 = new QLabel(gridLayoutWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        QFont font2;
+        font2.setPointSize(16);
+        label_4->setFont(font2);
+
+        gridLayout->addWidget(label_4, 1, 1, 1, 1);
+
+        label_2 = new QLabel(gridLayoutWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setFont(font2);
+
+        gridLayout->addWidget(label_2, 0, 1, 1, 1);
+
+        label_5 = new QLabel(gridLayoutWidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setFont(font2);
+
+        gridLayout->addWidget(label_5, 0, 3, 1, 1);
+
+        label_6 = new QLabel(gridLayoutWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setFont(font2);
+
+        gridLayout->addWidget(label_6, 1, 3, 1, 1);
+
+        displaySO2 = new QLabel(gridLayoutWidget);
+        displaySO2->setObjectName(QStringLiteral("displaySO2"));
+
+        gridLayout->addWidget(displaySO2, 0, 4, 1, 1);
+
+        displayPM10 = new QLabel(gridLayoutWidget);
+        displayPM10->setObjectName(QStringLiteral("displayPM10"));
+
+        gridLayout->addWidget(displayPM10, 1, 4, 1, 1);
+
+        displayNO2 = new QLabel(gridLayoutWidget);
+        displayNO2->setObjectName(QStringLiteral("displayNO2"));
+
+        gridLayout->addWidget(displayNO2, 0, 2, 1, 1);
+
+        displayO3 = new QLabel(gridLayoutWidget);
+        displayO3->setObjectName(QStringLiteral("displayO3"));
+
+        gridLayout->addWidget(displayO3, 1, 2, 1, 1);
+
+        groupBox = new QGroupBox(centralWidget);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(70, 710, 371, 91));
+        gridLayoutWidget_2 = new QWidget(groupBox);
+        gridLayoutWidget_2->setObjectName(QStringLiteral("gridLayoutWidget_2"));
+        gridLayoutWidget_2->setGeometry(QRect(0, 20, 371, 61));
+        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(gridLayoutWidget_2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
+
+        label_7 = new QLabel(gridLayoutWidget_2);
+        label_7->setObjectName(QStringLiteral("label_7"));
+
+        gridLayout_2->addWidget(label_7, 0, 1, 1, 1);
+
+        endInterval = new QDateTimeEdit(gridLayoutWidget_2);
+        endInterval->setObjectName(QStringLiteral("endInterval"));
+        endInterval->setDate(QDate(2017, 1, 7));
+        endInterval->setMaximumDate(QDate(2017, 7, 31));
+        endInterval->setMinimumDate(QDate(2017, 1, 1));
+
+        gridLayout_2->addWidget(endInterval, 1, 1, 1, 1);
+
+        startInterval = new QDateTimeEdit(gridLayoutWidget_2);
+        startInterval->setObjectName(QStringLiteral("startInterval"));
+        startInterval->setDate(QDate(2017, 1, 7));
+        startInterval->setMaximumDate(QDate(2017, 7, 31));
+        startInterval->setMinimumDate(QDate(2017, 1, 1));
+
+        gridLayout_2->addWidget(startInterval, 1, 0, 1, 1);
+
+        groupBox_2 = new QGroupBox(centralWidget);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setGeometry(QRect(450, 710, 101, 51));
+        sensorSpinBox = new QSpinBox(groupBox_2);
+        sensorSpinBox->setObjectName(QStringLiteral("sensorSpinBox"));
+        sensorSpinBox->setGeometry(QRect(0, 20, 101, 31));
+        sensorSpinBox->setMaximum(9);
+        searchPushButton = new QPushButton(centralWidget);
+        searchPushButton->setObjectName(QStringLiteral("searchPushButton"));
+        searchPushButton->setGeometry(QRect(828, 710, 121, 41));
+        approximateTable = new QTableView(centralWidget);
+        approximateTable->setObjectName(QStringLiteral("approximateTable"));
+        approximateTable->setGeometry(QRect(970, 490, 341, 331));
+        label_8 = new QLabel(centralWidget);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(970, 470, 101, 17));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1109, 22));
+        menuBar->setGeometry(QRect(0, 0, 1326, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -63,6 +216,22 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        airCondition->setText(QApplication::translate("MainWindow", "airCondition", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Attribute", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "O3", Q_NULLPTR));
+        label_2->setText(QApplication::translate("MainWindow", "No2", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "SO2", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "PM10", Q_NULLPTR));
+        displaySO2->setText(QApplication::translate("MainWindow", "NULL", Q_NULLPTR));
+        displayPM10->setText(QApplication::translate("MainWindow", "NULL", Q_NULLPTR));
+        displayNO2->setText(QApplication::translate("MainWindow", "NULL", Q_NULLPTR));
+        displayO3->setText(QApplication::translate("MainWindow", "NULL", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("MainWindow", "Time Interval", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MainWindow", "From", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "End", Q_NULLPTR));
+        groupBox_2->setTitle(QApplication::translate("MainWindow", "Sensor", Q_NULLPTR));
+        searchPushButton->setText(QApplication::translate("MainWindow", "Search", Q_NULLPTR));
+        label_8->setText(QApplication::translate("MainWindow", "Approximate", Q_NULLPTR));
     } // retranslateUi
 
 };

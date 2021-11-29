@@ -226,6 +226,14 @@
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/calculation.cpp">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/calculation.h">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
 		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/airQualityProject_autogen/mocs_compilation.cpp">
 			<Option target="airQualityProject"/>
 		</Unit>
@@ -240,19 +248,19 @@
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp.rule">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
 		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp">
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>
 		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp.rule">
-			<Option target="airQualityProject_node"/>
-			<Option target="airQualityProject"/>
-		</Unit>
-		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp">
-			<Option target="airQualityProject_node"/>
-			<Option target="airQualityProject"/>
-		</Unit>
-		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp.rule">
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>
@@ -268,14 +276,6 @@
 			<Option target="airQualityProject"/>
 		</Unit>
 		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h">
-			<Option target="airQualityProject_node"/>
-			<Option target="airQualityProject"/>
-		</Unit>
-		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/marker.cpp">
-			<Option target="airQualityProject_node"/>
-			<Option target="airQualityProject"/>
-		</Unit>
-		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/marker.h">
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>

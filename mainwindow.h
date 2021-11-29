@@ -1,11 +1,12 @@
 #ifndef MAP_MAINWINDOW_H
 #define MAP_MAINWINDOW_H
-#include "marker.h"
+
 
 #include "QtPositioning/QGeoCoordinate"
 #include <QMainWindow>
 #include <QtWidgets>
 #include "QtQml/QQmlContext"
+#include <iostream>
 namespace Ui {
     class MainWindow;
 }
@@ -17,15 +18,18 @@ public:
     ~MainWindow();
 
 protected:
-    virtual void keyPressEvent(QKeyEvent * event);
+
 private:
     Ui::MainWindow *ui;
-    Marker marker_model;
+//    Marker marker_model;
     QString path = "/home/pei/Documents/code/cpp/airQualityProject/map.qml";
 
+    QDate start,end;
+    int whichSensor;
+    bool isValid;
     void initConnection();
+    void searchButton();
 signals:
-    void SaveButton();
-    void LoadButton();
+    void Searching(QDate,QDate,int);
 };
 #endif //MAP_MAINWINDOW_H

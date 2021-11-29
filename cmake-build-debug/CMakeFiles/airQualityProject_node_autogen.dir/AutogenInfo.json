@@ -93,13 +93,13 @@
 			null
 		],
 		[
-			"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h",
+			"/home/pei/Documents/code/cpp/airQualityProject/calculation.h",
 			"mU",
 			"",
 			null
 		],
 		[
-			"/home/pei/Documents/code/cpp/airQualityProject/marker.h",
+			"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h",
 			"mU",
 			"",
 			null
@@ -168,12 +168,12 @@
 	"MOC_SKIP" : 
 	[
 		"/home/pei/Documents/code/cpp/airQualityProject/app.h",
+		"/home/pei/Documents/code/cpp/airQualityProject/calculation.h",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_app.cpp",
+		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp",
-		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/ui_mainwindow.h",
-		"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h",
-		"/home/pei/Documents/code/cpp/airQualityProject/marker.h"
+		"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
@@ -186,14 +186,14 @@
 	"SOURCES" : 
 	[
 		[ "/home/pei/Documents/code/cpp/airQualityProject/app.cpp", "MU", null ],
-		[ "/home/pei/Documents/code/cpp/airQualityProject/main.cpp", "MU", null ],
 		[
-			"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.cpp",
+			"/home/pei/Documents/code/cpp/airQualityProject/calculation.cpp",
 			"MU",
 			null
 		],
+		[ "/home/pei/Documents/code/cpp/airQualityProject/main.cpp", "MU", null ],
 		[
-			"/home/pei/Documents/code/cpp/airQualityProject/marker.cpp",
+			"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.cpp",
 			"MU",
 			null
 		]
@@ -203,8 +203,8 @@
 	"UIC_SKIP" : 
 	[
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_app.cpp",
+		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp",
-		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/ui_mainwindow.h"
 	],
 	"UIC_UI_FILES" : [],

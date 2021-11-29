@@ -4,17 +4,19 @@ App::App(int &argc, char** argv)
         : QApplication(argc, argv)
 {
     w= new MainWindow();
-    m = new Marker();
+    c = new Calculation();
+    c->start();
     w->show();
     initConnection();
 }
 App::~App() {
+    c->quit();
     delete w;
-    delete m;
+    delete c;
     qDebug() << "done";
 }
 void App::initConnection() {
-    connect(w, &MainWindow::SaveButton , m, &Marker::saveData,Qt::DirectConnection);
-    connect(w,&MainWindow::LoadButton,m, &Marker::loadData);
+    connect(w,&MainWindow::Searching,c,&Calculation::searching);
+//    connect(w,&MainWindow::LoadButton,m, &Marker::loadData);
 
 }

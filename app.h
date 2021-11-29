@@ -8,13 +8,13 @@
 #include <QObject>
 #include <QDebug>
 #include "mainwindow.h"
-#include "marker.h"
+#include "calculation.h"
 
 class App : public QApplication{
     Q_OBJECT
 public:
     MainWindow *w;
-    Marker *m;
+    Calculation *c;
     App(int &argc, char** argv) ;
     ~App();
 

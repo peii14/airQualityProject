@@ -70,13 +70,13 @@ moc_app.cpp: ../app.h
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating moc_app.cpp"
 	/usr/lib/qt5/bin/moc @/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_app.cpp_parameters
 
-moc_mainwindow.cpp: ../mainwindow.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating moc_mainwindow.cpp"
-	/usr/lib/qt5/bin/moc @/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp_parameters
+moc_calculation.cpp: ../calculation.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating moc_calculation.cpp"
+	/usr/lib/qt5/bin/moc @/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp_parameters
 
-moc_marker.cpp: ../marker.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating moc_marker.cpp"
-	/usr/lib/qt5/bin/moc @/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp_parameters
+moc_mainwindow.cpp: ../mainwindow.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating moc_mainwindow.cpp"
+	/usr/lib/qt5/bin/moc @/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp_parameters
 
 CMakeFiles/airQualityProject_node.dir/airQualityProject_node_autogen/mocs_compilation.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
 CMakeFiles/airQualityProject_node.dir/airQualityProject_node_autogen/mocs_compilation.cpp.o: airQualityProject_node_autogen/mocs_compilation.cpp
@@ -104,9 +104,22 @@ CMakeFiles/airQualityProject_node.dir/app.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/app.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/app.cpp -o CMakeFiles/airQualityProject_node.dir/app.cpp.s
 
+CMakeFiles/airQualityProject_node.dir/calculation.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
+CMakeFiles/airQualityProject_node.dir/calculation.cpp.o: ../calculation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/airQualityProject_node.dir/calculation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/calculation.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/calculation.cpp
+
+CMakeFiles/airQualityProject_node.dir/calculation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/airQualityProject_node.dir/calculation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pei/Documents/code/cpp/airQualityProject/calculation.cpp > CMakeFiles/airQualityProject_node.dir/calculation.cpp.i
+
+CMakeFiles/airQualityProject_node.dir/calculation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/calculation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/calculation.cpp -o CMakeFiles/airQualityProject_node.dir/calculation.cpp.s
+
 CMakeFiles/airQualityProject_node.dir/main.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
 CMakeFiles/airQualityProject_node.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/airQualityProject_node.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/airQualityProject_node.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/main.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/main.cpp
 
 CMakeFiles/airQualityProject_node.dir/main.cpp.i: cmake_force
@@ -119,7 +132,7 @@ CMakeFiles/airQualityProject_node.dir/main.cpp.s: cmake_force
 
 CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
 CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o: ../mainwindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/mainwindow.cpp
 
 CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.i: cmake_force
@@ -129,19 +142,6 @@ CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.i: cmake_force
 CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/mainwindow.cpp -o CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.s
-
-CMakeFiles/airQualityProject_node.dir/marker.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
-CMakeFiles/airQualityProject_node.dir/marker.cpp.o: ../marker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/airQualityProject_node.dir/marker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/marker.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/marker.cpp
-
-CMakeFiles/airQualityProject_node.dir/marker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/airQualityProject_node.dir/marker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pei/Documents/code/cpp/airQualityProject/marker.cpp > CMakeFiles/airQualityProject_node.dir/marker.cpp.i
-
-CMakeFiles/airQualityProject_node.dir/marker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/marker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/marker.cpp -o CMakeFiles/airQualityProject_node.dir/marker.cpp.s
 
 CMakeFiles/airQualityProject_node.dir/moc_app.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
 CMakeFiles/airQualityProject_node.dir/moc_app.cpp.o: moc_app.cpp
@@ -156,9 +156,22 @@ CMakeFiles/airQualityProject_node.dir/moc_app.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/moc_app.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_app.cpp -o CMakeFiles/airQualityProject_node.dir/moc_app.cpp.s
 
+CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
+CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o: moc_calculation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp
+
+CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp > CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.i
+
+CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp -o CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.s
+
 CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
 CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o: moc_mainwindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp
 
 CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.i: cmake_force
@@ -169,41 +182,28 @@ CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp -o CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.s
 
-CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o: CMakeFiles/airQualityProject_node.dir/flags.make
-CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o: moc_marker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o -c /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp
-
-CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp > CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.i
-
-CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp -o CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.s
-
 # Object files for target airQualityProject_node
 airQualityProject_node_OBJECTS = \
 "CMakeFiles/airQualityProject_node.dir/airQualityProject_node_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/airQualityProject_node.dir/app.cpp.o" \
+"CMakeFiles/airQualityProject_node.dir/calculation.cpp.o" \
 "CMakeFiles/airQualityProject_node.dir/main.cpp.o" \
 "CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o" \
-"CMakeFiles/airQualityProject_node.dir/marker.cpp.o" \
 "CMakeFiles/airQualityProject_node.dir/moc_app.cpp.o" \
-"CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o" \
-"CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o"
+"CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o" \
+"CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o"
 
 # External object files for target airQualityProject_node
 airQualityProject_node_EXTERNAL_OBJECTS =
 
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/airQualityProject_node_autogen/mocs_compilation.cpp.o
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/app.cpp.o
+airQualityProject_node: CMakeFiles/airQualityProject_node.dir/calculation.cpp.o
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/main.cpp.o
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/mainwindow.cpp.o
-airQualityProject_node: CMakeFiles/airQualityProject_node.dir/marker.cpp.o
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/moc_app.cpp.o
+airQualityProject_node: CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o
-airQualityProject_node: CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o
 airQualityProject_node: CMakeFiles/airQualityProject_node.dir/build.make
 airQualityProject_node: /usr/lib/x86_64-linux-gnu/libQt5Positioning.so.5.9.5
 airQualityProject_node: /usr/lib/x86_64-linux-gnu/libQt5Concurrent.so.5.9.5
@@ -227,8 +227,8 @@ CMakeFiles/airQualityProject_node.dir/clean:
 .PHONY : CMakeFiles/airQualityProject_node.dir/clean
 
 CMakeFiles/airQualityProject_node.dir/depend: moc_app.cpp
+CMakeFiles/airQualityProject_node.dir/depend: moc_calculation.cpp
 CMakeFiles/airQualityProject_node.dir/depend: moc_mainwindow.cpp
-CMakeFiles/airQualityProject_node.dir/depend: moc_marker.cpp
 	cd /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pei/Documents/code/cpp/airQualityProject /home/pei/Documents/code/cpp/airQualityProject /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles/airQualityProject_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/airQualityProject_node.dir/depend
 
