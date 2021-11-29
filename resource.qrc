@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Peta.qml</file>
+    </qresource>
+</RCC>
