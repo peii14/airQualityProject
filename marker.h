@@ -22,13 +22,15 @@ public:
         PositionRole = Qt::UserRole + 1000,
     };
     explicit Marker(QObject *parent = nullptr);
-    void moveMarker(const QGeoCoordinate & coordinate);
+    void addMarker(const QGeoCoordinate & coordinate);
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
     int maxMarkers() const;
     void setMaxMarkers(int maxMarkers=0);
     QGeoCoordinate current() const;
+public slots:
+    void getCoordinate(QGeoCoordinate);
 
 signals:
     void currentChanged();

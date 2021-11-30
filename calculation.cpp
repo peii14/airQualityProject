@@ -18,6 +18,8 @@ Calculation::~Calculation(){
 }
 void Calculation::run(){
     qDebug()<<startInterval<<" "<<endInterval<<" "<<sensors;
+    AVL tree;
+    tree.root = tree.insert(tree.root,average);
 }
 
 void Calculation::searching(QDate start,QDate end,int sensor) {
