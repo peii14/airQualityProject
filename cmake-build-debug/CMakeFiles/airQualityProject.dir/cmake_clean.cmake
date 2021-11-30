@@ -7,14 +7,17 @@ file(REMOVE_RECURSE
   "CMakeFiles/airQualityProject.dir/calculation.cpp.o"
   "CMakeFiles/airQualityProject.dir/main.cpp.o"
   "CMakeFiles/airQualityProject.dir/mainwindow.cpp.o"
+  "CMakeFiles/airQualityProject.dir/marker.cpp.o"
   "CMakeFiles/airQualityProject.dir/moc_app.cpp.o"
   "CMakeFiles/airQualityProject.dir/moc_calculation.cpp.o"
   "CMakeFiles/airQualityProject.dir/moc_mainwindow.cpp.o"
+  "CMakeFiles/airQualityProject.dir/moc_marker.cpp.o"
   "libairQualityProject.a"
   "libairQualityProject.pdb"
   "moc_app.cpp"
   "moc_calculation.cpp"
   "moc_mainwindow.cpp"
+  "moc_marker.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

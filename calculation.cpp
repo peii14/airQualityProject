@@ -18,7 +18,6 @@ Calculation::~Calculation(){
 }
 void Calculation::run(){
     qDebug()<<startInterval<<" "<<endInterval<<" "<<sensors;
-    exec();
 }
 
 void Calculation::searching(QDate start,QDate end,int sensor) {
@@ -26,7 +25,5 @@ void Calculation::searching(QDate start,QDate end,int sensor) {
     startInterval = start;
     endInterval = end;
     sensors = sensor;
-    qDebug()<<"DUARRR";
     mtx.unlock();
-    emit finished();
 }

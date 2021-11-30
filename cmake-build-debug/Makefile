@@ -324,6 +324,33 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+marker.o: marker.cpp.o
+.PHONY : marker.o
+
+# target to build an object file
+marker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/marker.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/marker.cpp.o
+.PHONY : marker.cpp.o
+
+marker.i: marker.cpp.i
+.PHONY : marker.i
+
+# target to preprocess a source file
+marker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/marker.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/marker.cpp.i
+.PHONY : marker.cpp.i
+
+marker.s: marker.cpp.s
+.PHONY : marker.s
+
+# target to generate assembly for a file
+marker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/marker.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/marker.cpp.s
+.PHONY : marker.cpp.s
+
 moc_app.o: moc_app.cpp.o
 .PHONY : moc_app.o
 
@@ -405,6 +432,33 @@ moc_mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_mainwindow.cpp.s
 .PHONY : moc_mainwindow.cpp.s
 
+moc_marker.o: moc_marker.cpp.o
+.PHONY : moc_marker.o
+
+# target to build an object file
+moc_marker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_marker.cpp.o
+.PHONY : moc_marker.cpp.o
+
+moc_marker.i: moc_marker.cpp.i
+.PHONY : moc_marker.i
+
+# target to preprocess a source file
+moc_marker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_marker.cpp.i
+.PHONY : moc_marker.cpp.i
+
+moc_marker.s: moc_marker.cpp.s
+.PHONY : moc_marker.s
+
+# target to generate assembly for a file
+moc_marker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_marker.cpp.s
+.PHONY : moc_marker.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -435,6 +489,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... marker.o"
+	@echo "... marker.i"
+	@echo "... marker.s"
 	@echo "... moc_app.o"
 	@echo "... moc_app.i"
 	@echo "... moc_app.s"
@@ -444,6 +501,9 @@ help:
 	@echo "... moc_mainwindow.o"
 	@echo "... moc_mainwindow.i"
 	@echo "... moc_mainwindow.s"
+	@echo "... moc_marker.o"
+	@echo "... moc_marker.i"
+	@echo "... moc_marker.s"
 .PHONY : help
 
 

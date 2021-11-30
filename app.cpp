@@ -5,6 +5,7 @@ App::App(int &argc, char** argv)
 {
     w= new MainWindow();
     c = new Calculation();
+    m = new Marker();
     c->start();
     w->show();
     initConnection();
@@ -12,11 +13,12 @@ App::App(int &argc, char** argv)
 App::~App() {
     c->quit();
     delete w;
+    delete m;
     delete c;
     qDebug() << "done";
 }
 void App::initConnection() {
-    connect(w,&MainWindow::Searching,c,&Calculation::searching);
+    connect(w,&MainWindow::Searching,c,&Calculation::searching,Qt::DirectConnection);
 //    connect(w,&MainWindow::LoadButton,m, &Marker::loadData);
 
 }
