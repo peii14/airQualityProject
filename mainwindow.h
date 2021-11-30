@@ -26,13 +26,13 @@ private:
     Ui::MainWindow *ui;
     Marker marker_model;
     QString path = "/home/pei/Documents/code/cpp/airQualityProject/map.qml";
-    QDate start,end;
+    QDateTime start,end;
     int whichSensor;
     std::string latitude,longitude;
     bool isValid;
     void initConnection();
     void searchButton();
 signals:
-    void Searching(QDate,QDate,int);
+    void Searching(QDateTime,QDateTime,int);
 };
 #endif //MAP_MAINWINDOW_H

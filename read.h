@@ -9,7 +9,7 @@
 #include <QFile>
 #include <QStringList>
 #include <QDebug>
-
+#include <string>
 #include <QtConcurrent>
 #include <QThread>
 #include <QFuture>
@@ -18,17 +18,17 @@
 #include <thread>
 #include <mutex>
 
+
 using namespace std;
 
-class Read: public QThread{
-    Q_OBJECT
+class Read{
 protected:
     QStringList wordList;
-    void readInRange(QDate,QDate);
+    void readInRange(QDateTime,QDateTime,int);
 public:
     Read();
     ~Read();
-    void run();
+//    void run();
 
 
 public:

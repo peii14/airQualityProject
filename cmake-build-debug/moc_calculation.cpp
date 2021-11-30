@@ -64,7 +64,7 @@ static const uint qt_meta_data_Calculation[] = {
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QDate, QMetaType::QDate, QMetaType::Int,    2,    2,    2,
+    QMetaType::Void, QMetaType::QDateTime, QMetaType::QDateTime, QMetaType::Int,    2,    2,    2,
 
        0        // eod
 };
@@ -76,7 +76,7 @@ void Calculation::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->finished(); break;
-        case 1: _t->searching((*reinterpret_cast< QDate(*)>(_a[1])),(*reinterpret_cast< QDate(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 1: _t->searching((*reinterpret_cast< QDateTime(*)>(_a[1])),(*reinterpret_cast< QDateTime(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -109,6 +109,8 @@ void *Calculation::qt_metacast(const char *_clname)
         return static_cast<void*>(this);
     if (!strcmp(_clname, "AVL"))
         return static_cast< AVL*>(this);
+    if (!strcmp(_clname, "Read"))
+        return static_cast< Read*>(this);
     return QThread::qt_metacast(_clname);
 }
 

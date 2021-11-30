@@ -34,8 +34,8 @@ void MainWindow::initConnection() {
 
 }
 void MainWindow::searchButton() {
-    start = ui->startInterval->date();
-    end = ui->endInterval->date();
+    start = ui->startInterval->dateTime();
+    end = ui->endInterval->dateTime();
     start<end ? isValid = true: isValid = false;
     if(isValid){
        whichSensor = ui->sensorSpinBox->value();

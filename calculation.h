@@ -269,12 +269,12 @@ public:
 
 private:
     QMutex mtx;
-    QDate startInterval,endInterval;
+    QDateTime startInterval,endInterval;
     int sensors;
     double average;
     void run();
 public slots:
-    void searching(QDate , QDate , int);
+    void searching(QDateTime , QDateTime , int);
 signals:
     void finished();
 //    void location(QGeoCoordinate);

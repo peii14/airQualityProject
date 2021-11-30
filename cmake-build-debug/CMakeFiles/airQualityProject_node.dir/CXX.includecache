@@ -21,6 +21,8 @@ QStringList
 -
 QDebug
 -
+string
+-
 QtConcurrent
 -
 QThread

@@ -8,7 +8,7 @@ App::App(int &argc, char** argv)
     m = new Marker();
     r= new Read();
     c->start();
-    r->start();
+//    r->start();
     w->show();
     initConnection();
 }

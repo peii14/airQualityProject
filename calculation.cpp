@@ -5,8 +5,8 @@
 #include "calculation.h"
 
 Calculation::Calculation() {
-    startInterval =QDate::currentDate();
-    endInterval = QDate::currentDate();
+    startInterval =QDateTime::currentDateTime();
+    endInterval = QDateTime::currentDateTime();
     sensors = -1;
     qDebug() << "thread serial:" << QThread::currentThreadId();
 
@@ -22,11 +22,11 @@ void Calculation::run(){
     tree.root = tree.insert(tree.root,average);
 }
 
-void Calculation::searching(QDate start,QDate end,int sensor) {
+void Calculation::searching(QDateTime start,QDateTime end,int sensor) {
     mtx.lock();
     startInterval = start;
     endInterval = end;
     sensors = sensor;
     mtx.unlock();
-    Read::readInRange(startInterval,endInterval);
+    Read::readInRange(startInterval,endInterval,sensors);
 }
