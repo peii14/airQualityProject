@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QJsonObject>
 
+
 class Marker : public QAbstractListModel
 {
 Q_OBJECT

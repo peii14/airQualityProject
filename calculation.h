@@ -21,6 +21,9 @@
 #include <cmath>
 #include <algorithm>
 #include <QtPositioning/QGeoCoordinate>
+#include <queue>
+#include <unordered_map>
+#include "read.h"
 using namespace std;
 
 struct node {
@@ -257,7 +260,7 @@ public:
     }
 };
 
-class Calculation: public QThread, public AVL {
+class Calculation: public QThread, public AVL, public Read{
 Q_OBJECT
 
 public:

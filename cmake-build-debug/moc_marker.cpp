@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Marker_t {
-    QByteArrayData data[5];
-    char stringdata0[46];
+    QByteArrayData data[6];
+    char stringdata0[60];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,12 +34,13 @@ static const qt_meta_stringdata_Marker_t qt_meta_stringdata_Marker = {
 QT_MOC_LITERAL(0, 0, 6), // "Marker"
 QT_MOC_LITERAL(1, 7, 14), // "currentChanged"
 QT_MOC_LITERAL(2, 22, 0), // ""
-QT_MOC_LITERAL(3, 23, 7), // "current"
-QT_MOC_LITERAL(4, 31, 14) // "QGeoCoordinate"
+QT_MOC_LITERAL(3, 23, 13), // "getCoordinate"
+QT_MOC_LITERAL(4, 37, 14), // "QGeoCoordinate"
+QT_MOC_LITERAL(5, 52, 7) // "current"
 
     },
-    "Marker\0currentChanged\0\0current\0"
-    "QGeoCoordinate"
+    "Marker\0currentChanged\0\0getCoordinate\0"
+    "QGeoCoordinate\0current"
 };
 #undef QT_MOC_LITERAL
 
@@ -49,21 +50,27 @@ static const uint qt_meta_data_Marker[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
-       1,   20, // properties
+       2,   14, // methods
+       1,   28, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x06 /* Public */,
+       1,    0,   24,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+       3,    1,   25,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
 
+ // slots: parameters
+    QMetaType::Void, 0x80000000 | 4,    2,
+
  // properties: name, type, flags
-       3, 0x80000000 | 4, 0x00495009,
+       5, 0x80000000 | 4, 0x00495009,
 
  // properties: notify_signal_id
        0,
@@ -78,6 +85,7 @@ void Marker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->currentChanged(); break;
+        case 1: _t->getCoordinate((*reinterpret_cast< QGeoCoordinate(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -103,7 +111,6 @@ void Marker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     } else if (_c == QMetaObject::ResetProperty) {
     }
 #endif // QT_NO_PROPERTIES
-    Q_UNUSED(_a);
 }
 
 const QMetaObject Marker::staticMetaObject = {
@@ -131,13 +138,13 @@ int Marker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

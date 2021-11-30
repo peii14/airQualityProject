@@ -28,4 +28,5 @@ void Calculation::searching(QDate start,QDate end,int sensor) {
     endInterval = end;
     sensors = sensor;
     mtx.unlock();
+    Read::readInRange(startInterval,endInterval);
 }

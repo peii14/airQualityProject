@@ -19,7 +19,7 @@ public:
 
     ~MainWindow();
 private Q_SLOTS:
-    void onTimeout();
+//    void onTimeout();
 protected:
 
 private:

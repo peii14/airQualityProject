@@ -10,6 +10,7 @@
 #include "mainwindow.h"
 #include "calculation.h"
 #include "marker.h"
+#include "read.h"
 
 class App : public QApplication{
     Q_OBJECT
@@ -17,6 +18,7 @@ public:
     MainWindow *w;
     Calculation *c;
     Marker *m;
+    Read *r;
     App(int &argc, char** argv) ;
     ~App();
 

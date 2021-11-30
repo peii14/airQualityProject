@@ -6,7 +6,9 @@ App::App(int &argc, char** argv)
     w= new MainWindow();
     c = new Calculation();
     m = new Marker();
+    r= new Read();
     c->start();
+    r->start();
     w->show();
     initConnection();
 }
