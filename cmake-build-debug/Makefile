@@ -459,6 +459,60 @@ moc_marker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_marker.cpp.s
 .PHONY : moc_marker.cpp.s
 
+moc_read.o: moc_read.cpp.o
+.PHONY : moc_read.o
+
+# target to build an object file
+moc_read.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/moc_read.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_read.cpp.o
+.PHONY : moc_read.cpp.o
+
+moc_read.i: moc_read.cpp.i
+.PHONY : moc_read.i
+
+# target to preprocess a source file
+moc_read.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/moc_read.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_read.cpp.i
+.PHONY : moc_read.cpp.i
+
+moc_read.s: moc_read.cpp.s
+.PHONY : moc_read.s
+
+# target to generate assembly for a file
+moc_read.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/moc_read.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/moc_read.cpp.s
+.PHONY : moc_read.cpp.s
+
+read.o: read.cpp.o
+.PHONY : read.o
+
+# target to build an object file
+read.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/read.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/read.cpp.o
+.PHONY : read.cpp.o
+
+read.i: read.cpp.i
+.PHONY : read.i
+
+# target to preprocess a source file
+read.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/read.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/read.cpp.i
+.PHONY : read.cpp.i
+
+read.s: read.cpp.s
+.PHONY : read.s
+
+# target to generate assembly for a file
+read.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject_node.dir/build.make CMakeFiles/airQualityProject_node.dir/read.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/airQualityProject.dir/build.make CMakeFiles/airQualityProject.dir/read.cpp.s
+.PHONY : read.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -504,6 +558,12 @@ help:
 	@echo "... moc_marker.o"
 	@echo "... moc_marker.i"
 	@echo "... moc_marker.s"
+	@echo "... moc_read.o"
+	@echo "... moc_read.i"
+	@echo "... moc_read.s"
+	@echo "... read.o"
+	@echo "... read.i"
+	@echo "... read.s"
 .PHONY : help
 
 

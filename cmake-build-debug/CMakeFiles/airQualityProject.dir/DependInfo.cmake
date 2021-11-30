@@ -18,6 +18,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp" "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles/airQualityProject.dir/moc_calculation.cpp.o"
   "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp" "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles/airQualityProject.dir/moc_mainwindow.cpp.o"
   "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp" "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles/airQualityProject.dir/moc_marker.cpp.o"
+  "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_read.cpp" "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles/airQualityProject.dir/moc_read.cpp.o"
+  "/home/pei/Documents/code/cpp/airQualityProject/read.cpp" "/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/CMakeFiles/airQualityProject.dir/read.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

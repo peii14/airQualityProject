@@ -272,6 +272,14 @@
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_read.cpp">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_read.cpp.rule">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
 		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/ui_mainwindow.h">
 			<Option target="airQualityProject"/>
 		</Unit>
@@ -292,6 +300,14 @@
 			<Option target="airQualityProject"/>
 		</Unit>
 		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/marker.h">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/read.cpp">
+			<Option target="airQualityProject_node"/>
+			<Option target="airQualityProject"/>
+		</Unit>
+		<Unit filename="/home/pei/Documents/code/cpp/airQualityProject/read.h">
 			<Option target="airQualityProject_node"/>
 			<Option target="airQualityProject"/>
 		</Unit>

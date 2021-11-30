@@ -12,12 +12,15 @@ file(REMOVE_RECURSE
   "CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o"
   "CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o"
   "CMakeFiles/airQualityProject_node.dir/moc_marker.cpp.o"
+  "CMakeFiles/airQualityProject_node.dir/moc_read.cpp.o"
+  "CMakeFiles/airQualityProject_node.dir/read.cpp.o"
   "airQualityProject_node"
   "airQualityProject_node.pdb"
   "moc_app.cpp"
   "moc_calculation.cpp"
   "moc_mainwindow.cpp"
   "moc_marker.cpp"
+  "moc_read.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

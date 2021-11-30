@@ -3,3 +3,11 @@
 //
 
 #include "read.h"
+
+Read::Read() {
+
+}
+Read::~Read() {
+
+
+}

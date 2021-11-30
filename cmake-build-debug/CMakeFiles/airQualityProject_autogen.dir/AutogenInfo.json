@@ -109,6 +109,12 @@
 			"mU",
 			"",
 			null
+		],
+		[
+			"/home/pei/Documents/code/cpp/airQualityProject/read.h",
+			"mU",
+			"",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -164,9 +170,11 @@
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp",
+		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_read.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/ui_mainwindow.h",
 		"/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h",
-		"/home/pei/Documents/code/cpp/airQualityProject/marker.h"
+		"/home/pei/Documents/code/cpp/airQualityProject/marker.h",
+		"/home/pei/Documents/code/cpp/airQualityProject/read.h"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
@@ -194,7 +202,8 @@
 			"/home/pei/Documents/code/cpp/airQualityProject/marker.cpp",
 			"MU",
 			null
-		]
+		],
+		[ "/home/pei/Documents/code/cpp/airQualityProject/read.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
@@ -205,6 +214,7 @@
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_calculation.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_mainwindow.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_marker.cpp",
+		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/moc_read.cpp",
 		"/home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug/ui_mainwindow.h"
 	],
 	"UIC_UI_FILES" : [],
