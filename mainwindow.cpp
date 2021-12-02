@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->airCondition->setStyleSheet("background-color:white;");
     ui->airCondition->setStyleSheet("color:black;");
 //    Marker
-    marker_model.setMaxMarkers(5);
-    marker_model.addMarker(QGeoCoordinate(45.783549, 4.874572));
+    marker_model.setMaxMarkers(1);
+//    marker_model.moveMarker(QGeoCoordinate(45.783549, 4.874572));
 //
     initConnection();
 }
@@ -63,6 +63,11 @@ void MainWindow::datafromCalculation(bool status, double O3, double NO2, double 
     ui->displaySO2->setText(QString::number(SO2));
     ui->displayPM10->setText(QString::number(PM10));
 }
+void MainWindow::getCoordinate(QGeoCoordinate next) {
+    marker_model.removeLastMarker();
+    marker_model.moveMarker(next);
+}
+
 
 
 

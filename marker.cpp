@@ -10,7 +10,7 @@ Marker::Marker(QObject *parent)
 
 }
 
-void Marker::addMarker(const QGeoCoordinate &coordinate)
+void Marker::moveMarker(const QGeoCoordinate &coordinate)
 {
     QGeoCoordinate last = m_current;
     m_current = coordinate;
@@ -80,8 +80,4 @@ void Marker::removeLastMarker()
     beginRemoveRows(QModelIndex(), rowCount()-1, rowCount()-1);
     m_markers.removeLast();
     endRemoveRows();
-}
-
-void Marker::getCoordinate(QGeoCoordinate coord) {
-    addMarker(coord);
 }

@@ -15,6 +15,7 @@ Read::~Read() {
 //
 //    exec();
 //}
+//MAJOR BUG
 void Read::readInRange(QDateTime start, QDateTime end) {
     qDebug()<<"isReading";
     QFile file("/home/pei/Documents/code/cpp/airQualityProject/test.csv");
@@ -33,7 +34,7 @@ void Read::readInRange(QDateTime start, QDateTime end) {
 
     while(!file.atEnd()){
         QByteArray line = file.readLine();
-        if(line.isEmpty()) return;
+        if(line.isEmpty()) qDebug()<<"EMPTY";
         if(line.startsWith(started)){
             wordList.append(line.split(',').first());
             range=1;
@@ -46,6 +47,7 @@ void Read::readInRange(QDateTime start, QDateTime end) {
             }
         }
     }
+
     if(wordList.isEmpty()){
         qDebug()<<"NO DATA PROVIDED";
     }else{

@@ -13,7 +13,7 @@ Item {
         id: map
         anchors.fill: parent
         plugin: mapPlugin
-        center: QtPositioning.coordinate(45.783549,4.874572);
+        center: marker_model.current;
         zoomLevel: 14
         Marker{
             coordinate: marker_model.current

@@ -24,6 +24,7 @@
 #include <queue>
 #include <unordered_map>
 #include "read.h"
+#include <stack>
 using namespace std;
 
 struct node {
@@ -51,6 +52,7 @@ private:
     int sensors;
     bool isSafe;
     double avgo3,avgso2,avgno2,avgpm10;
+    double findApproximate;
     void run();
     void calcAttribute(int);
     double calcAverage(QStringList);
@@ -66,9 +68,14 @@ private:
     struct node* insert(struct node *r,int data,int sens);
     struct node * deleteNode(struct node *p,int data);
     struct node* insuc(struct node* p);
-    void levelorder_newline(struct node *v);
     struct node* inpre(struct node* p);
+    void levelorder_newline(struct node *v);
     void levelorder_newline();
+    void printBT(const std::string& prefix, const node* node, bool isLeft);
+    void printBT(const node* node);
+    tuple<vector<double>, vector<int>> closestKValues(node* root, double traget, int k);
+    void pushLarger(node* nodes, stack <node*>& st, double target);
+    void pushSmaller(node* nodes, stack <node*>& st, double target);
 public slots:
     void searching(QDateTime , QDateTime , int);
 signals:

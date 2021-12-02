@@ -36,6 +36,7 @@ private:
     double O3,NO2,SO2,PM10;
 public slots:
     void datafromCalculation(bool,double,double,double,double);
+void getCoordinate(QGeoCoordinate);
 signals:
     void Searching(QDateTime,QDateTime,int);
 };
