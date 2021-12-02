@@ -166,7 +166,7 @@ public:
 
         endInterval = new QDateTimeEdit(gridLayoutWidget_2);
         endInterval->setObjectName(QStringLiteral("endInterval"));
-        endInterval->setDate(QDate(2017, 1, 7));
+        endInterval->setDate(QDate(2017, 1, 1));
         endInterval->setMaximumDate(QDate(2017, 7, 31));
         endInterval->setMinimumDate(QDate(2017, 1, 1));
 
@@ -174,7 +174,7 @@ public:
 
         startInterval = new QDateTimeEdit(gridLayoutWidget_2);
         startInterval->setObjectName(QStringLiteral("startInterval"));
-        startInterval->setDate(QDate(2017, 1, 7));
+        startInterval->setDate(QDate(2017, 1, 1));
         startInterval->setMaximumDate(QDate(2017, 7, 31));
         startInterval->setMinimumDate(QDate(2017, 1, 1));
 

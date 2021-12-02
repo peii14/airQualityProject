@@ -32,6 +32,10 @@ private:
     bool isValid;
     void initConnection();
     void searchButton();
+    bool status;
+    double O3,NO2,SO2,PM10;
+public slots:
+    void datafromCalculation(bool,double,double,double,double);
 signals:
     void Searching(QDateTime,QDateTime,int);
 };

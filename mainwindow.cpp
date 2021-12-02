@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     longitude = latitude = "0";
     whichSensor = 0;
+    O3 = NO2 = SO2 = PM10 = 0;
     ui->setupUi(this);
     ui->quickWidget->rootContext()->setContextProperty("marker_model", &marker_model);
     ui->quickWidget->setSource(QUrl(path));
@@ -18,7 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
     marker_model.setMaxMarkers(5);
     marker_model.addMarker(QGeoCoordinate(45.783549, 4.874572));
 //
-
     initConnection();
 }
 
@@ -32,6 +32,8 @@ void MainWindow::initConnection() {
     connect(ui->searchPushButton,&QPushButton::clicked,this,&MainWindow::searchButton);
     ui->quickWidget->rootContext()->setContextProperty("long_",std::stod(longitude.c_str()));
     ui->quickWidget->rootContext()->setContextProperty("lat_",std::stod(latitude.c_str()));
+    ui->airCondition->setText("NULL");
+
 
 }
 void MainWindow::searchButton() {
@@ -45,6 +47,21 @@ void MainWindow::searchButton() {
     }else{
         std::cout<<"Date is not Valid"<<std::endl;
     }
+}
+void MainWindow::datafromCalculation(bool status, double O3, double NO2, double SO2, double PM10) {
+    status = status;
+    O3 = O3;
+    NO2 = NO2;
+    SO2 = SO2;
+    PM10 = PM10;
+    if(status)
+        ui->airCondition->setText("Good");
+    else
+        ui->airCondition->setText("Poor");
+    ui->displayNO2->setText(QString::number(NO2));
+    ui->displayO3->setText(QString::number(O3));
+    ui->displaySO2->setText(QString::number(SO2));
+    ui->displayPM10->setText(QString::number(PM10));
 }
 
 

@@ -21,6 +21,6 @@ App::~App() {
 }
 void App::initConnection() {
     connect(w,&MainWindow::Searching,c,&Calculation::searching,Qt::DirectConnection);
-//    connect(w,&MainWindow::LoadButton,m, &Marker::loadData);
-
+    connect(c,&Calculation::dataToUI,w,&MainWindow::datafromCalculation,Qt::DirectConnection);
+    connect(c,&Calculation::dataToMarker,m,&Marker::getCoordinate,Qt::DirectConnection);
 }

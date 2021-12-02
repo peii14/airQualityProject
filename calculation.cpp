@@ -41,6 +41,7 @@ Calculation::Calculation() {
     sens8 <<"";
     sens9 <<"";
 
+    this->root = NULL;
     qDebug() << "thread serial:" << QThread::currentThreadId();
 }
 
@@ -49,7 +50,7 @@ Calculation::~Calculation(){
 
 }
 void Calculation::run(){
-    qDebug()<<startInterval<<" "<<endInterval<<" "<<sensors;
+//    qDebug()<<startInterval<<" "<<endInterval<<" "<<sensors;
 //    AVL tree;
 //    tree.root = tree.insert(tree.root,average);
 }
@@ -62,34 +63,255 @@ void Calculation::searching(QDateTime start,QDateTime end,int sensor) {
     mtx.unlock();
     Read::readInRange(startInterval,endInterval);
     encapsulation(wordList);
-    qDebug()<<wordList;
+    calcAttribute(sensors);
 }
 
 void Calculation::calcAttribute(int whichSensor) {
-    if(!sens0.isEmpty() || whichSensor == 0){
+    Calculation tree;
+    if(!sens0.isEmpty()){
         att03 = sens0.filter("O3");
         attso2 = sens0.filter("SO2");
         attno2 = sens0.filter("NO2");
         attpm10 = sens0.filter("PM10");
-        avg03 = calcAverage(att03);
+
+        avgo3 = calcAverage(att03);
         avgno2 = calcAverage(attno2);
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
-//        o3 > 100 dang else safe
-//        so2>15 dang else safe
-//        no2>100 dang else safe
-//        pm10>50 dang else safe
-//         isSafe if 3 att is safe else dang
-        if(avg03<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
             isSafe = true;
         }else isSafe = false;
-    }else if(!sens1.isEmpty() || whichSensor == 1){
+        if(whichSensor == 0){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor0);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),0);
+    }
+    if(!sens1.isEmpty()){
+        att03 = sens1.filter("O3");
+        attso2 = sens1.filter("SO2");
+        attno2 = sens1.filter("NO2");
+        attpm10 = sens1.filter("PM10");
 
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 1){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor1);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),1);
+    }
+    if(!sens2.isEmpty()){
+        att03 = sens2.filter("O3");
+        attso2 = sens2.filter("SO2");
+        attno2 = sens2.filter("NO2");
+        attpm10 = sens2.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 2){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor2);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),2);
+    }
+    if(!sens3.isEmpty()){
+        att03 = sens3.filter("O3");
+        attso2 = sens3.filter("SO2");
+        attno2 = sens3.filter("NO2");
+        attpm10 = sens3.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 3){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor3);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),3);
+    }
+    if(!sens4.isEmpty()){
+        att03 = sens4.filter("O3");
+        attso2 = sens4.filter("SO2");
+        attno2 = sens4.filter("NO2");
+        attpm10 = sens4.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 4){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor4);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),4);
+    }
+    if(!sens5.isEmpty()){
+        att03 = sens5.filter("O3");
+        attso2 = sens5.filter("SO2");
+        attno2 = sens5.filter("NO2");
+        attpm10 = sens5.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 5){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor5);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),5);
+    }
+    if(!sens6.isEmpty()){
+        att03 = sens6.filter("O3");
+        attso2 = sens6.filter("SO2");
+        attno2 = sens6.filter("NO2");
+        attpm10 = sens6.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 6){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor6);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),6);
+    }
+    if(!sens7.isEmpty()){
+        att03 = sens7.filter("O3");
+        attso2 = sens7.filter("SO2");
+        attno2 = sens7.filter("NO2");
+        attpm10 = sens7.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 7){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor7);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),7);
+    }
+    if(!sens8.isEmpty()){
+        att03 = sens8.filter("O3");
+        attso2 = sens8.filter("SO2");
+        attno2 = sens8.filter("NO2");
+        attpm10 = sens8.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 8){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor8);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),8);
+    }
+    if(!sens9.isEmpty()){
+        att03 = sens9.filter("O3");
+        attso2 = sens9.filter("SO2");
+        attno2 = sens9.filter("NO2");
+        attpm10 = sens9.filter("PM10");
+
+        avgo3 = calcAverage(att03);
+        avgno2 = calcAverage(attno2);
+        avgso2 = calcAverage(attso2);
+        avgpm10 = calcAverage(attpm10);
+
+        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
+            isSafe = true;
+        }else isSafe = false;
+        if(whichSensor == 9){
+            dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            dataToMarker(sensor9);
+        }
+        double sd[4] = {avgo3,avgno2,avgso2,avgpm10};
+        tree.root = tree.insert(tree.root,calcSD(sd),9);
     }
 }
-double Calculation::calcAverage(QStringList) {
+double Calculation::calcAverage(QStringList average) {
+    int totalData = average.count();
+    std::string strAverage = average.join(";").toStdString();
+    std::string delimiter = ";";
+    size_t pos = 0;
+    int counter=1;
+    double total;
+    std::string token;
+    while ((pos = strAverage.find(delimiter)) != std::string::npos) {
+        token = strAverage.substr(0, pos);
+        if(counter%4 == 0){
 
+            total += stod(token.c_str());
+        }
+        strAverage.erase(0, pos + delimiter.length());
+        counter++;
+    }
+//    qDebug()<<strAverage;
+    if(!strAverage.empty())
+        total += stod(strAverage);
+    return total/totalData;
 }
+
+double Calculation::calcSD(double data[]) {
+    double sum = 0.0, mean, standardDeviation = 0.0;
+    int i;
+    for(i = 0; i < 10; ++i)
+        sum += data[i];
+    mean = sum / 10;
+    for(i = 0; i < 10; ++i)
+        standardDeviation += pow(data[i] - mean, 2);
+    return sqrt(standardDeviation / 10);
+}
+
 void Calculation::encapsulation(QStringList words) {
     sens0 = words.filter("Sensor0");
     sens1 = words.filter("Sensor1");
@@ -102,7 +324,206 @@ void Calculation::encapsulation(QStringList words) {
     sens8 = words.filter("Sensor8");
     sens9 = words.filter("Sensor9");
 
+}
+
+int Calculation::calheight(struct node *p){
+
+    if(p->left && p->right){
+        if (p->left->height < p->right->height)
+            return p->right->height + 1;
+        else return  p->left->height + 1;
+    }
+    else if(p->left && p->right == NULL){
+        return p->left->height + 1;
+    }
+    else if(p->left ==NULL && p->right){
+        return p->right->height + 1;
+    }
+    return 0;
+
+}
+int Calculation::bf(struct node *n){
+    if(n->left && n->right){
+        return n->left->height - n->right->height;
+    }
+    else if(n->left && n->right == NULL){
+        return n->left->height;
+    }
+    else if(n->left== NULL && n->right ){
+        return -n->right->height;
+    }
+}
+struct node * Calculation::llrotation(struct node *n){
+    struct node *p;
+    struct node *tp;
+    p = n;
+    tp = p->left;
+
+    p->left = tp->right;
+    tp->right = p;
+
+    return tp;
+}
+struct node * Calculation::rrrotation(struct node *n){
+    struct node *p;
+    struct node *tp;
+    p = n;
+    tp = p->right;
+
+    p->right = tp->left;
+    tp->left = p;
+
+    return tp;
+}
+struct node * Calculation::rlrotation(struct node *n){
+    struct node *p;
+    struct node *tp;
+    struct node *tp2;
+    p = n;
+    tp = p->right;
+    tp2 =p->right->left;
+
+    p -> right = tp2->left;
+    tp ->left = tp2->right;
+    tp2 ->left = p;
+    tp2->right = tp;
+
+    return tp2;
+}
+struct node * Calculation::lrrotation(struct node *n){
+    struct node *p;
+    struct node *tp;
+    struct node *tp2;
+    p = n;
+    tp = p->left;
+    tp2 =p->left->right;
+
+    p -> left = tp2->right;
+    tp ->right = tp2->left;
+    tp2 ->right = p;
+    tp2->left = tp;
+
+    return tp2;
+}
+struct node* Calculation::insert(struct node *r,int data,int sens){
+    if(r==NULL){
+        struct node *n;
+        n = new struct node;
+        n->data = data;
+        n->sensor = sens;
+        r = n;
+        r->left = r->right = NULL;
+        r->height = 1;
+        return r;
+    }
+    else{
+        if(data < r->data)
+            r->left = insert(r->left,data,sens);
+        else
+            r->right = insert(r->right,data,sens);
+    }
+
+    r->height = Calculation::calheight(r);
+
+    if(Calculation::bf(r)==2 && Calculation::bf(r->left)==1){
+        r = llrotation(r);
+    }
+    else if(Calculation::bf(r)==-2 && Calculation::bf(r->right)==-1){
+        r = rrrotation(r);
+    }
+    else if(Calculation::bf(r)==-2 && Calculation::bf(r->right)==1){
+        r = rlrotation(r);
+    }
+    else if(Calculation::bf(r)==2 && Calculation::bf(r->left)==-1){
+        r = lrrotation(r);
+    }
+
+    return r;
+
+}
+void Calculation::levelorder_newline(){
+    if (this->root == NULL){
+        cout<<"\n"<<"Empty tree"<<"\n";
+        return;
+    }
+    levelorder_newline(this->root);
+}
+void Calculation::levelorder_newline(struct node *v){
+    queue <struct node *> q;
+    struct node *cur;
+    q.push(v);
+    q.push(NULL);
+
+    while(!q.empty()){
+        cur = q.front();
+        q.pop();
+        if(cur == NULL && q.size()!=0){
+            cout<<"\n";
+
+            q.push(NULL);
+            continue;
+        }
+        if(cur!=NULL){
+            cout<<" "<<cur->data;
+
+            if (cur->left!=NULL){
+                q.push(cur->left);
+            }
+            if (cur->right!=NULL){
+                q.push(cur->right);
+            }
+        }
+    }
+}
+
+struct node * Calculation::deleteNode(struct node *p,int data){
+
+    if(p->left == NULL && p->right == NULL){
+        if(p==this->root)
+            this->root = NULL;
+        delete p;
+        return NULL;
+    }
+
+    struct node *t;
+    struct node *q;
+    if(p->data < data){
+        p->right = deleteNode(p->right,data);
+    }
+    else if(p->data > data){
+        p->left = deleteNode(p->left,data);
+    }
+    else{
+        if(p->left != NULL){
+            q = inpre(p->left);
+            p->data = q->data;
+            p->left=deleteNode(p->left,q->data);
+        }
+        else{
+            q = insuc(p->right);
+            p->data = q->data;
+            p->right = deleteNode(p->right,q->data);
+        }
+    }
+
+    if(bf(p)==2 && bf(p->left)==1){ p = llrotation(p); }
+    else if(bf(p)==2 && bf(p->left)==-1){ p = lrrotation(p); }
+    else if(bf(p)==2 && bf(p->left)==0){ p = llrotation(p); }
+    else if(bf(p)==-2 && bf(p->right)==-1){ p = rrrotation(p); }
+    else if(bf(p)==-2 && bf(p->right)==1){ p = rlrotation(p); }
+    else if(bf(p)==-2 && bf(p->right)==0){ p = llrotation(p); }
 
 
+    return p;
+}
+struct node* Calculation::inpre(struct node* p){
+    while(p->right!=NULL)
+        p = p->right;
+    return p;
+}
+struct node* Calculation::insuc(struct node* p){
+    while(p->left!=NULL)
+        p = p->left;
+    return p;
 }
 

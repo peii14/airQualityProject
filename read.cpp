@@ -22,7 +22,6 @@ void Read::readInRange(QDateTime start, QDateTime end) {
         qDebug() << file.errorString();
         return;
     }
-
     int range=0;
     string tmp = start.toString(Qt::ISODate).toStdString();
     char * started = new char [tmp.length()+1];
@@ -36,20 +35,23 @@ void Read::readInRange(QDateTime start, QDateTime end) {
         QByteArray line = file.readLine();
         if(line.isEmpty()) return;
         if(line.startsWith(started)){
-            qDebug()<<"start";
             wordList.append(line.split(',').first());
             range=1;
         }else if(range==1){
-            qDebug()<<"range";
             wordList.append(line.split(',').first());
             if(line.startsWith(ended)){
-                qDebug()<<"stop";
                 wordList.append(line.split(',').first());
                 range=0;
                 break;
             }
         }
     }
+    if(wordList.isEmpty()){
+        qDebug()<<"NO DATA PROVIDED";
+    }else{
+        qDebug()<<"Total data loaded: "<<wordList.count();
+    }
+
 }
 
 
