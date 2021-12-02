@@ -15,7 +15,7 @@ Read::~Read() {
 //
 //    exec();
 //}
-void Read::readInRange(QDateTime start, QDateTime end,int sensor) {
+void Read::readInRange(QDateTime start, QDateTime end) {
     qDebug()<<"isReading";
     QFile file("/home/pei/Documents/code/cpp/airQualityProject/test.csv");
     if (!file.open(QIODevice::ReadOnly)) {
@@ -23,9 +23,6 @@ void Read::readInRange(QDateTime start, QDateTime end,int sensor) {
         return;
     }
 
-    char sens[7];
-    sprintf(sens, "Sensor%d", sensor);
-    qDebug()<<sens;
     int range=0;
     string tmp = start.toString(Qt::ISODate).toStdString();
     char * started = new char [tmp.length()+1];
@@ -37,14 +34,15 @@ void Read::readInRange(QDateTime start, QDateTime end,int sensor) {
 
     while(!file.atEnd()){
         QByteArray line = file.readLine();
-        if(line.startsWith(started)&&line.contains(sens)){
+        if(line.isEmpty()) return;
+        if(line.startsWith(started)){
             qDebug()<<"start";
             wordList.append(line.split(',').first());
             range=1;
-        }else if(range==1&&line.contains(sens)){
+        }else if(range==1){
             qDebug()<<"range";
             wordList.append(line.split(',').first());
-            if(line.startsWith(ended)&&line.contains(sens)){
+            if(line.startsWith(ended)){
                 qDebug()<<"stop";
                 wordList.append(line.split(',').first());
                 range=0;
@@ -52,7 +50,6 @@ void Read::readInRange(QDateTime start, QDateTime end,int sensor) {
             }
         }
     }
-    qDebug() << wordList.back();
 }
 
 

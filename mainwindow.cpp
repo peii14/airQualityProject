@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui(new Ui::MainWindow)
 {
     longitude = latitude = "0";
+    whichSensor = 0;
     ui->setupUi(this);
     ui->quickWidget->rootContext()->setContextProperty("marker_model", &marker_model);
     ui->quickWidget->setSource(QUrl(path));

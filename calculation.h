@@ -28,7 +28,8 @@ using namespace std;
 
 struct node {
     struct node *left;
-    int data;
+    double data;
+
     int height;
     struct node *right;
 
@@ -268,11 +269,19 @@ public:
     ~Calculation();
 
 private:
+    QStringList sens0,sens1,sens2,sens3,sens4,sens5,sens6,sens7,sens8,sens9;
+    QStringList att03,attso2,attno2,attpm10;
+    QStringList sensor0AVG,sensor1AVG,sensor2AVG,sensor3AVG,sensor4AVG,sensor5AVG,sensor6AVG,sensor7AVG,sensor8AVG,sensor9AVG;
+    QGeoCoordinate sensor0,sensor1,sensor2,sensor3,sensor4,sensor5,sensor6,sensor7,sensor8,sensor9;
     QMutex mtx;
     QDateTime startInterval,endInterval;
     int sensors;
-    double average;
+    bool isSafe;
+    double avg03,avgso2,avgno2,avgpm10;
     void run();
+    void calcAttribute(int);
+    double calcAverage(QStringList);
+    void encapsulation(QStringList);
 public slots:
     void searching(QDateTime , QDateTime , int);
 signals:

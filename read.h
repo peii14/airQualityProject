@@ -24,13 +24,11 @@ using namespace std;
 class Read{
 protected:
     QStringList wordList;
-    void readInRange(QDateTime,QDateTime,int);
+    void readInRange(QDateTime,QDateTime);
 public:
     Read();
     ~Read();
 //    void run();
-
-
 public:
 
 };

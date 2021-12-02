@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/airQualityProject_node_autogen"
+  "airQualityProject_node_autogen/include/ui_mainwindow.h"
   "airQualityProject_node_autogen/mocs_compilation.cpp"
 )
 
