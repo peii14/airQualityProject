@@ -23,11 +23,11 @@ public:
 
     ~MainWindow();
 private Q_SLOTS:
-//    void onTimeout();
+
 protected:
 
 private:
-
+    int numRows,numColumns;
     QList<int> appSensor;
     QList<QString> appSensorstr;
     QList<double> appAvg,appo3,appno2,appso2,apppm10;
@@ -51,22 +51,5 @@ void getCoordinate(QGeoCoordinate);
 signals:
     void Searching(QDateTime,QDateTime,int);
 };
-class Approximation : public QAbstractTableModel{
-Q_OBJECT
 
-public:
-    Approximation(QObject *parent = 0);
-
-    void populateData(const QList<QString> &appSensor,const QList<double> &appAverage,const QList<double> &O3,const QList<double> &NO2,const QList<double> &SO2,const QList<double> &PM1);
-
-    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-
-private:
-    QList<QString> appSensorstr_;
-    QList<double> appAvg_,appo3_,appno2_,appso2_,apppm10_;
-};
 #endif //MAP_MAINWINDOW_H

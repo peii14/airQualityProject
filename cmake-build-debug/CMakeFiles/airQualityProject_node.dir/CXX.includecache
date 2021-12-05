@@ -3578,6 +3578,10 @@ qstatusbar.h
 qtableview.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtableview.h
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableWidget
+qtablewidget.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtablewidget.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolBar
 qtoolbar.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtoolbar.h
@@ -5037,7 +5041,7 @@ QtWidgets/QSpinBox
 -
 QtWidgets/QStatusBar
 -
-QtWidgets/QTableView
+QtWidgets/QTableWidget
 -
 QtWidgets/QToolBar
 -

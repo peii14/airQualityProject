@@ -24,7 +24,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include "QtQuickWidgets/QQuickWidget"
@@ -58,8 +58,8 @@ public:
     QGroupBox *groupBox_2;
     QSpinBox *sensorSpinBox;
     QPushButton *searchPushButton;
-    QTableView *approximateTable;
     QLabel *label_8;
+    QTableWidget *approximateTable;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -190,12 +190,26 @@ public:
         searchPushButton = new QPushButton(centralWidget);
         searchPushButton->setObjectName(QStringLiteral("searchPushButton"));
         searchPushButton->setGeometry(QRect(828, 710, 121, 41));
-        approximateTable = new QTableView(centralWidget);
-        approximateTable->setObjectName(QStringLiteral("approximateTable"));
-        approximateTable->setGeometry(QRect(970, 490, 341, 331));
         label_8 = new QLabel(centralWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(970, 470, 101, 17));
+        approximateTable = new QTableWidget(centralWidget);
+        if (approximateTable->columnCount() < 6)
+            approximateTable->setColumnCount(6);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        approximateTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        approximateTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        approximateTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        approximateTable->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        approximateTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        approximateTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        approximateTable->setObjectName(QStringLiteral("approximateTable"));
+        approximateTable->setGeometry(QRect(970, 490, 311, 331));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -232,6 +246,18 @@ public:
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Sensor", Q_NULLPTR));
         searchPushButton->setText(QApplication::translate("MainWindow", "Search", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "Approximate", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem = approximateTable->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Sensors", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem1 = approximateTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "O3", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem2 = approximateTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "NO2", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem3 = approximateTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "SO2", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem4 = approximateTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "PM10", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem5 = approximateTable->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "Average", Q_NULLPTR));
     } // retranslateUi
 
 };

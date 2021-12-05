@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     longitude = latitude = "0";
     whichSensor = 0;
+    numRows = 5;
+    numColumns = 6;
     O3 = NO2 = SO2 = PM10 = 0;
     ui->setupUi(this);
     ui->quickWidget->rootContext()->setContextProperty("marker_model", &marker_model);
@@ -68,7 +70,6 @@ void MainWindow::getCoordinate(QGeoCoordinate next) {
     marker_model.moveMarker(next);
 }
 void MainWindow::dataForApproximation(QList<double>average , QList<int> sensors,QList<double> o3,QList<double> no2,QList<double> so2,QList<double>pm10 ) {
-    Approximation *approximate = new Approximation(this);
     appAvg = average;
     appo3 = o3;
     appno2 = no2;
@@ -97,81 +98,26 @@ void MainWindow::dataForApproximation(QList<double>average , QList<int> sensors,
             appSensorstr.append("Sensor 9");
         }
     }
-    approximate->populateData(appSensorstr,appAvg,appo3,appno2,appso2,apppm10);
-    ui->approximateTable->setModel(approximate);
+
+//    ui->approximateTable->clear();
+    ui->approximateTable->setRowCount(numRows);
+    ui->approximateTable->setColumnCount(numColumns);
+    for(auto r=0;r<appSensorstr.size();r++){
+        ui->approximateTable->setItem(r,0,new QTableWidgetItem(appSensorstr.at(r)));
+    }
+    for(auto r=0;r<appo3.size();r++)
+        ui->approximateTable->setItem(r,1,new QTableWidgetItem(QString::number(appo3.at(r))));
+    for(auto r=0;r<appno2.size();r++)
+        ui->approximateTable->setItem(r,2,new QTableWidgetItem(QString::number(appno2.at(r))));
+    for(auto r=0;r<appso2.size();r++)
+        ui->approximateTable->setItem(r,3,new QTableWidgetItem(QString::number(appso2.at(r))));
+    for(auto r=0;r<apppm10.size();r++)
+        ui->approximateTable->setItem(r,4,new QTableWidgetItem(QString::number(apppm10.at(r))));
+    for(auto r=0;r<appAvg.size();r++)
+        ui->approximateTable->setItem(r,5,new QTableWidgetItem(QString::number(appAvg.at(r))));
+
     ui->approximateTable->horizontalHeader()->setVisible(true);
     ui->approximateTable->show();
-}
-
-Approximation::Approximation(QObject *parent) : QAbstractTableModel(parent)
-{
-
-}
-
-void Approximation::populateData(const QList<QString> &appSensor,const QList<double> &appAverage,const QList<double> &O3,const QList<double> &NO2,const QList<double> &SO2,const QList<double> &PM10){
-    appSensorstr_.clear();
-    appSensorstr_ = appSensor;
-    appo3_.clear();
-    appo3_ = O3;
-    appno2_.clear();
-    appno2_ = NO2;
-    appso2_.clear();
-    appso2_ = SO2;
-    apppm10_.clear();
-    apppm10_ = PM10;
-    return;
-}
-
-int Approximation::rowCount(const QModelIndex &parent) const{
-    Q_UNUSED(parent);
-    return appAvg_.length();
-}
-
-int Approximation::columnCount(const QModelIndex &parent) const{
-    Q_UNUSED(parent);
-    return 6;
-}
-
-QVariant Approximation::data(const QModelIndex &index, int role) const{
-    if (!index.isValid() || role != Qt::DisplayRole) {
-        return QVariant();
-    }
-    if (index.column() == 0) {
-        return appSensorstr_[index.row()];
-    }
-    else if (index.column() == 1) {
-        return appo3_[index.row()].to;
-    }else if (index.column() == 2) {
-        return appno2_[index.row()];
-    }else if (index.column() == 3) {
-        return appso2_[index.row()];
-    }else if (index.column() == 4) {
-        return apppm10_[index.row()];
-    }else if (index.column() == 5) {
-        return appAvg_[index.row()];
-    }
-
-    return QVariant();
-}
-
-QVariant Approximation::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
-        if (section == 0) {
-            return QString("Sensor");
-        } else if (section == 1) {
-            return QString("O3");
-        }else if (section == 2) {
-            return QString("NO2");
-        }else if (section == 3) {
-            return QString("SO2");
-        }else if (section == 4) {
-            return QString("PM10");
-        }else if (section == 5) {
-            return QString("Average");
-        }
-    }
-    return QVariant();
 }
 
 
