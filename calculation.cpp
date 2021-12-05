@@ -84,7 +84,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,0);
+        tree.root = tree.insert(tree.root,sd,0,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 0){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -107,13 +107,12 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,1,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 1){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
             dataToMarker(sensor1);
         }
-
     }
     if(!sens2.isEmpty()){
         att03 = sens2.filter("O3");
@@ -129,7 +128,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,2,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 2){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -152,7 +151,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,3,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 3){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -174,7 +173,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,4,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 4){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -196,7 +195,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,5,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 5){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -218,7 +217,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,6,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 6){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -240,7 +239,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,7,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 7){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -262,7 +261,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,8,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 8){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -284,7 +283,7 @@ void Calculation::calcAttribute(int whichSensor) {
             isSafe = true;
         }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
-        tree.root = tree.insert(tree.root,sd,1);
+        tree.root = tree.insert(tree.root,sd,9,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 9){
             findApproximate = sd;
             dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
@@ -292,7 +291,9 @@ void Calculation::calcAttribute(int whichSensor) {
         }
     }
     printBT(tree.root);
-    closestKValues(root,findApproximate,5);
+    closestKValues(tree.root,findApproximate,5);
+
+    dataApptoxiamtion(ret,sen,att1,att2,att3,att4);
 }
 double Calculation::calcAverage(QStringList average) {
     int totalData = average.count();
@@ -421,12 +422,16 @@ struct node * Calculation::lrrotation(struct node *n){
 
     return tp2;
 }
-struct node* Calculation::insert(struct node *r,int data,int sens){
+struct node* Calculation::insert(struct node *r,int data,int sens,double atto3,double attno2,double attso2,double attpm10){
     if(r==NULL){
         struct node *n;
         n = new struct node;
         n->data = data;
         n->sensor = sens;
+        n->o3 = atto3;
+        n->no2 = attno2;
+        n->so2 = attso2;
+        n->pm10 = attpm10;
         r = n;
         r->left = r->right = NULL;
         r->height = 1;
@@ -434,9 +439,9 @@ struct node* Calculation::insert(struct node *r,int data,int sens){
     }
     else{
         if(data < r->data)
-            r->left = insert(r->left,data,sens);
+            r->left = insert(r->left,data,sens,atto3,attno2,attso2,attpm10);
         else
-            r->right = insert(r->right,data,sens);
+            r->right = insert(r->right,data,sens,atto3,attno2,attso2,attpm10);
     }
 
     r->height = Calculation::calheight(r);
@@ -566,7 +571,7 @@ void Calculation::pushSmaller(node* nodes, stack <node*>& st, double target){
     }
 }
 void Calculation::pushLarger(node* nodes, stack <node*>& st, double target){
-    while (nodes) {
+    while(nodes) {
         if (nodes->data >= target) {
             st.push(nodes);
             nodes = nodes->left;
@@ -576,9 +581,8 @@ void Calculation::pushLarger(node* nodes, stack <node*>& st, double target){
     }
 }
 
-tuple<vector<double>, vector<int>> Calculation::closestKValues(node* root, double target, int k){
-    vector<double> ret;
-    vector<int> sen;
+void Calculation::closestKValues(node* root, double target, int k){
+
     stack<node*> smaller;
     stack<node*> larger;
     pushLarger(root, larger, target);
@@ -589,6 +593,10 @@ tuple<vector<double>, vector<int>> Calculation::closestKValues(node* root, doubl
             smaller.pop();
             ret.push_back(curr->data);
             sen.push_back(curr->sensor);
+            att1.push_back(curr->o3);
+            att2.push_back(curr->no2);
+            att3.push_back(curr->so2);
+            att4.push_back(curr->pm10);
             pushSmaller(curr->left, smaller, target);
         }
         else {
@@ -596,11 +604,15 @@ tuple<vector<double>, vector<int>> Calculation::closestKValues(node* root, doubl
             larger.pop();
             ret.push_back(curr->data);
             sen.push_back(curr->sensor);
+            att1.push_back(curr->o3);
+            att2.push_back(curr->no2);
+            att3.push_back(curr->so2);
+            att4.push_back(curr->pm10);
+
             pushLarger(curr->right, larger, target);
         }
     }
-//    return ret;
-    return make_tuple(ret,sen);
+
 }
 
 

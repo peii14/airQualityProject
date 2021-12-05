@@ -24,4 +24,5 @@ void App::initConnection() {
     connect(c,&Calculation::dataToUI,w,&MainWindow::datafromCalculation,Qt::DirectConnection);
 //    connect(c,&Calculation::dataToMarker,m,&Marker::getCoordinate,Qt::DirectConnection);
     connect(c,&Calculation::dataToMarker,w,&MainWindow::getCoordinate,Qt::DirectConnection);
+    connect(c,&Calculation::dataApptoxiamtion,w,&MainWindow::dataForApproximation,Qt::DirectConnection);
 }

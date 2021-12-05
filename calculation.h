@@ -31,6 +31,7 @@ struct node {
     struct node *left;
     double data;
     int sensor;
+    double o3,no2,so2,pm10;
     int height;
     struct node *right;
 };
@@ -46,7 +47,12 @@ private:
     QStringList att03,attso2,attno2,attpm10;
     QGeoCoordinate sensor0,sensor1,sensor2,sensor3,sensor4,sensor5,sensor6,sensor7,sensor8,sensor9;
     QMutex mtx;
-
+    QList<double> ret;
+    QList<int> sen;
+    QList<double> att1;
+    QList<double> att2;
+    QList<double> att3;
+    QList<double> att4;
     QDateTime startInterval,endInterval;
     struct node * root;
     int sensors;
@@ -65,7 +71,7 @@ private:
     struct node * rrrotation(struct node *n);
     struct node * rlrotation(struct node *n);
     struct node * lrrotation(struct node *n);
-    struct node* insert(struct node *r,int data,int sens);
+    struct node* insert(struct node *r,int data,int sens,double atto3,double attno2,double attso2,double attpm10);
     struct node * deleteNode(struct node *p,int data);
     struct node* insuc(struct node* p);
     struct node* inpre(struct node* p);
@@ -73,12 +79,13 @@ private:
     void levelorder_newline();
     void printBT(const std::string& prefix, const node* node, bool isLeft);
     void printBT(const node* node);
-    tuple<vector<double>, vector<int>> closestKValues(node* root, double traget, int k);
+    void closestKValues(node* root, double target, int k);
     void pushLarger(node* nodes, stack <node*>& st, double target);
     void pushSmaller(node* nodes, stack <node*>& st, double target);
 public slots:
     void searching(QDateTime , QDateTime , int);
 signals:
+    void dataApptoxiamtion(QList<double>, QList<int> ,QList<double>,QList<double>,QList<double>,QList<double>);
     void finished();
     void dataToUI(bool,double O3,double NO2,double SO2,double PM10);
 //    void location(QGeoCoordinate);

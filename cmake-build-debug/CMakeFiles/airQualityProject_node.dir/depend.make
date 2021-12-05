@@ -366,6 +366,7 @@ CMakeFiles/airQualityProject_node.dir/app.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollerProperties \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableView \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgets \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgetsDepends \
@@ -1081,6 +1082,7 @@ CMakeFiles/airQualityProject_node.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollerProperties \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableView \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgets \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgetsDepends \
@@ -2157,6 +2159,7 @@ CMakeFiles/airQualityProject_node.dir/moc_app.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollerProperties \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableView \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgets \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgetsDepends \
@@ -2316,6 +2319,7 @@ CMakeFiles/airQualityProject_node.dir/moc_calculation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFuture \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMutex \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
@@ -2846,6 +2850,7 @@ CMakeFiles/airQualityProject_node.dir/moc_mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollerProperties \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableView \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgets \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QtWidgetsDepends \
