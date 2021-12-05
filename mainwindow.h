@@ -8,6 +8,7 @@
 #include "QtQml/QQmlContext"
 #include <iostream>
 #include <QTableView>
+#include <QAbstractTableModel>
 #include "marker.h"
 
 using namespace std;
@@ -65,7 +66,7 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
 private:
-    QList<QString> appSensorstr;
-    QList<double> appAvg,appo3,appno2,appso2,apppm10;
+    QList<QString> appSensorstr_;
+    QList<double> appAvg_,appo3_,appno2_,appso2_,apppm10_;
 };
 #endif //MAP_MAINWINDOW_H

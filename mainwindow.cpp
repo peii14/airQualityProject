@@ -18,12 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
 //    Marker
     marker_model.setMaxMarkers(1);
 //    marker_model.moveMarker(QGeoCoordinate(45.783549, 4.874572));
-//
-
-    Approximation *approximate = new Approximation();
-    approximate->populateData(appSensorstr,appAvg,appo3,appno2,appso2,apppm10);
-    ui->approximateTable->horizontalHeader()->setVisible(true);
-    ui->approximateTable->show();
 
     initConnection();
 }
@@ -39,8 +33,6 @@ void MainWindow::initConnection() {
     ui->quickWidget->rootContext()->setContextProperty("long_",std::stod(longitude.c_str()));
     ui->quickWidget->rootContext()->setContextProperty("lat_",std::stod(latitude.c_str()));
     ui->airCondition->setText("NULL");
-
-
 }
 void MainWindow::searchButton() {
     start = ui->startInterval->dateTime();
@@ -76,8 +68,8 @@ void MainWindow::getCoordinate(QGeoCoordinate next) {
     marker_model.moveMarker(next);
 }
 void MainWindow::dataForApproximation(QList<double>average , QList<int> sensors,QList<double> o3,QList<double> no2,QList<double> so2,QList<double>pm10 ) {
+    Approximation *approximate = new Approximation(this);
     appAvg = average;
-
     appo3 = o3;
     appno2 = no2;
     appso2 = so2;
@@ -105,34 +97,34 @@ void MainWindow::dataForApproximation(QList<double>average , QList<int> sensors,
             appSensorstr.append("Sensor 9");
         }
     }
-
-
+    approximate->populateData(appSensorstr,appAvg,appo3,appno2,appso2,apppm10);
+    ui->approximateTable->setModel(approximate);
+    ui->approximateTable->horizontalHeader()->setVisible(true);
+    ui->approximateTable->show();
 }
 
 Approximation::Approximation(QObject *parent) : QAbstractTableModel(parent)
 {
+
 }
 
-void Approximation::populateData(const QList<QString> &appSensor,const QList<double> &appAverage,const QList<double> &O3,const QList<double> &NO2,const QList<double> &SO2,const QList<double> &PM10)
-{
-    appSensorstr.clear();
-    appSensorstr = appSensor;
-    appo3.clear();
-    appo3 = O3;
-    appno2.clear();
-    appno2 = NO2;
-    appso2.clear();
-    appso2 = SO2;
-    apppm10.clear();
-    apppm10 = PM10;
-
-
+void Approximation::populateData(const QList<QString> &appSensor,const QList<double> &appAverage,const QList<double> &O3,const QList<double> &NO2,const QList<double> &SO2,const QList<double> &PM10){
+    appSensorstr_.clear();
+    appSensorstr_ = appSensor;
+    appo3_.clear();
+    appo3_ = O3;
+    appno2_.clear();
+    appno2_ = NO2;
+    appso2_.clear();
+    appso2_ = SO2;
+    apppm10_.clear();
+    apppm10_ = PM10;
     return;
 }
 
 int Approximation::rowCount(const QModelIndex &parent) const{
     Q_UNUSED(parent);
-    return appAvg.length();
+    return appAvg_.length();
 }
 
 int Approximation::columnCount(const QModelIndex &parent) const{
@@ -145,17 +137,18 @@ QVariant Approximation::data(const QModelIndex &index, int role) const{
         return QVariant();
     }
     if (index.column() == 0) {
-        return appSensorstr[index.row()];
-    } else if (index.column() == 1) {
-        return appo3[index.row()];
+        return appSensorstr_[index.row()];
+    }
+    else if (index.column() == 1) {
+        return appo3_[index.row()].to;
     }else if (index.column() == 2) {
-        return appno2[index.row()];
+        return appno2_[index.row()];
     }else if (index.column() == 3) {
-        return appso2[index.row()];
+        return appso2_[index.row()];
     }else if (index.column() == 4) {
-        return apppm10[index.row()];
+        return apppm10_[index.row()];
     }else if (index.column() == 5) {
-        return appAvg[index.row()];
+        return appAvg_[index.row()];
     }
 
     return QVariant();
@@ -173,7 +166,7 @@ QVariant Approximation::headerData(int section, Qt::Orientation orientation, int
         }else if (section == 3) {
             return QString("SO2");
         }else if (section == 4) {
-            return QString("PPM10");
+            return QString("PM10");
         }else if (section == 5) {
             return QString("Average");
         }

@@ -292,7 +292,6 @@ void Calculation::calcAttribute(int whichSensor) {
     }
     printBT(tree.root);
     closestKValues(tree.root,findApproximate,5);
-
     dataApptoxiamtion(ret,sen,att1,att2,att3,att4);
 }
 double Calculation::calcAverage(QStringList average) {
