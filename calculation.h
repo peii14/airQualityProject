@@ -64,7 +64,7 @@ private:
     double calcAverage(QStringList);
     void encapsulation(QStringList);
 
-    double calcSD(double *data);
+    unsigned short int getLeaf(struct node* node);
     int calheight(struct node *p);
     int bf(struct node *n);
     struct node * llrotation(struct node *n);

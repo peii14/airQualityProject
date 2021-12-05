@@ -291,7 +291,11 @@ void Calculation::calcAttribute(int whichSensor) {
         }
     }
     printBT(tree.root);
-    closestKValues(tree.root,findApproximate,5);
+    unsigned short int totalData = getLeaf(tree.root);
+    if(totalData<5)
+        closestKValues(tree.root,findApproximate,totalData);
+    else
+        closestKValues(tree.root,findApproximate,5);
     emit dataApptoxiamtion(ret,sen,att1,att2,att3,att4);
 }
 double Calculation::calcAverage(QStringList average) {
@@ -317,17 +321,6 @@ double Calculation::calcAverage(QStringList average) {
     return total/totalData;
 }
 
-double Calculation::calcSD(double data[]) {
-    double sum = 0.0, mean, standardDeviation = 0.0;
-    int i;
-    for(i = 0; i < 10; ++i)
-        sum += data[i];
-    mean = sum / 10;
-    for(i = 0; i < 10; ++i)
-        standardDeviation += pow(data[i] - mean, 2);
-    return sqrt(standardDeviation / 10);
-}
-
 void Calculation::encapsulation(QStringList words) {
     sens0 = words.filter("Sensor0");
     sens1 = words.filter("Sensor1");
@@ -339,7 +332,6 @@ void Calculation::encapsulation(QStringList words) {
     sens7 = words.filter("Sensor7");
     sens8 = words.filter("Sensor8");
     sens9 = words.filter("Sensor9");
-
 }
 
 int Calculation::calheight(struct node *p){
@@ -611,7 +603,15 @@ void Calculation::closestKValues(node* root, double target, int k){
             pushLarger(curr->right, larger, target);
         }
     }
-
+}
+unsigned short int  Calculation::getLeaf(struct node *node) {
+    if(node == NULL)
+        return 0;
+    if(node->left == NULL && node->right == NULL)
+        return 1;
+    else
+        return getLeaf(node->left)+
+               getLeaf(node->right);
 }
 
 

@@ -99,7 +99,7 @@ void MainWindow::dataForApproximation(QList<double>average , QList<int> sensors,
         }
     }
 
-//    ui->approximateTable->clear();
+    ui->approximateTable->clear();
     ui->approximateTable->setRowCount(numRows);
     ui->approximateTable->setColumnCount(numColumns);
     for(auto r=0;r<appSensorstr.size();r++){
