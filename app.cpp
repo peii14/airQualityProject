@@ -5,7 +5,7 @@ App::App(int &argc, char** argv)
 {
     w= new MainWindow();
     c = new Calculation();
-    m = new Marker();
+//    m = new Marker();
     r= new Read();
     c->start();
 //    r->start();
@@ -15,7 +15,7 @@ App::App(int &argc, char** argv)
 App::~App() {
     c->quit();
     delete w;
-    delete m;
+//    delete m;
     delete c;
     qDebug() << "done";
 }

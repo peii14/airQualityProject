@@ -80,7 +80,7 @@ static const uint qt_meta_data_Calculation[] = {
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 4, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3,    2,    2,    2,    2,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    7,    8,    9,   10,
+    QMetaType::Void, QMetaType::QString, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    7,    8,    9,   10,
     QMetaType::Void, 0x80000000 | 12,    2,
 
  // slots: parameters
@@ -97,7 +97,7 @@ void Calculation::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->dataApptoxiamtion((*reinterpret_cast< QList<double>(*)>(_a[1])),(*reinterpret_cast< QList<int>(*)>(_a[2])),(*reinterpret_cast< QList<double>(*)>(_a[3])),(*reinterpret_cast< QList<double>(*)>(_a[4])),(*reinterpret_cast< QList<double>(*)>(_a[5])),(*reinterpret_cast< QList<double>(*)>(_a[6]))); break;
         case 1: _t->finished(); break;
-        case 2: _t->dataToUI((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5]))); break;
+        case 2: _t->dataToUI((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5]))); break;
         case 3: _t->dataToMarker((*reinterpret_cast< QGeoCoordinate(*)>(_a[1]))); break;
         case 4: _t->searching((*reinterpret_cast< QDateTime(*)>(_a[1])),(*reinterpret_cast< QDateTime(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
@@ -136,7 +136,7 @@ void Calculation::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             }
         }
         {
-            typedef void (Calculation::*_t)(bool , double , double , double , double );
+            typedef void (Calculation::*_t)(QString , double , double , double , double );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Calculation::dataToUI)) {
                 *result = 2;
                 return;
@@ -204,7 +204,7 @@ void Calculation::finished()
 }
 
 // SIGNAL 2
-void Calculation::dataToUI(bool _t1, double _t2, double _t3, double _t4, double _t5)
+void Calculation::dataToUI(QString _t1, double _t2, double _t3, double _t4, double _t5)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);

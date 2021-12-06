@@ -30,6 +30,7 @@ Calculation::Calculation() {
     sensor9.setLatitude(36.2756694672982);
     sensor9.setLongitude(1.33005024461543);
 
+
     sens0 <<"";
     sens1 <<"";
     sens2 <<"";
@@ -40,12 +41,21 @@ Calculation::Calculation() {
     sens7 <<"";
     sens8 <<"";
     sens9 <<"";
-
+    passGood = (50+60+100+40)/4;
+    passFair = (100+120+200+80)/4;
+    passPoor = (150+180+300+120)/4;
+    passVeryPoor = (300+360+600+300)/4;
     this->root = NULL;
     qDebug() << "thread serial:" << QThread::currentThreadId();
 }
 
 Calculation::~Calculation(){
+    ret.clear();
+    sen.clear();
+    att1.clear();
+    att2.clear();
+    att3.clear();
+    att4.clear();
     qDebug()<<"calculation deleted";
 
 }
@@ -79,15 +89,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgno2 = calcAverage(attno2);
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
-
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
+
         tree.root = tree.insert(tree.root,sd,0,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 0){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor0);
         }
 
@@ -103,14 +122,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,1,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 1){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor1);
         }
     }
@@ -124,14 +153,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgno2 = calcAverage(attno2);
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,2,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 2){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor2);
         }
 
@@ -147,14 +186,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,3,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 3){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor3);
         }
     }
@@ -169,14 +218,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,4,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 4){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor4);
         }
     }
@@ -191,14 +250,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,5,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 5){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor5);
         }
     }
@@ -213,14 +282,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,6,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 6){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor6);
         }
     }
@@ -235,14 +314,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,7,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 7){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor7);
         }
     }
@@ -257,14 +346,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,8,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 8){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor8);
         }
     }
@@ -279,14 +378,24 @@ void Calculation::calcAttribute(int whichSensor) {
         avgso2 = calcAverage(attso2);
         avgpm10 = calcAverage(attpm10);
 
-        if(avgo3<100&&avgso2<200&&avgno2<120&&avgpm10<80){
-            isSafe = true;
-        }else isSafe = false;
+
         double sd = (avgo3+avgno2+avgso2+avgpm10)/4;
+        if(sd<=passGood){
+            airCondition = "Good";
+            isSafe = true;
+        }else if(sd<=passFair){
+            airCondition = "Fair";
+        } else if(sd<=passPoor){
+            airCondition = "Poor";
+        }else if(sd<=passVeryPoor){
+            airCondition = "Very Poor";
+        }else if(sd>passVeryPoor){
+            airCondition = "Extremely Poor";
+        }
         tree.root = tree.insert(tree.root,sd,9,avgo3,avgno2,avgso2,avgpm10);
         if(whichSensor == 9){
             findApproximate = sd;
-            emit dataToUI(isSafe, avgo3,avgno2,avgso2,avgpm10);
+            emit dataToUI(airCondition, avgo3,avgno2,avgso2,avgpm10);
             emit dataToMarker(sensor9);
         }
     }
@@ -297,6 +406,13 @@ void Calculation::calcAttribute(int whichSensor) {
     else
         closestKValues(tree.root,findApproximate,5);
     emit dataApptoxiamtion(ret,sen,att1,att2,att3,att4);
+    ret.clear();
+    sen.clear();
+    att1.clear();
+    att2.clear();
+    att3.clear();
+    att4.clear();
+
 }
 double Calculation::calcAverage(QStringList average) {
     int totalData = average.count();

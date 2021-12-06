@@ -28,12 +28,10 @@ protected:
 
 private:
     int numRows,numColumns;
-    QList<int> appSensor;
+    vector<int> whichTable;
     QList<QString> appSensorstr;
     QList<double> appAvg,appo3,appno2,appso2,apppm10;
-
     Ui::MainWindow *ui;
-
     Marker marker_model;
     QString path = "/home/pei/Documents/code/cpp/airQualityProject/map.qml";
     QDateTime start,end;
@@ -45,7 +43,7 @@ private:
     bool status;
     double O3,NO2,SO2,PM10;
 public slots:
-    void datafromCalculation(bool,double,double,double,double);
+    void datafromCalculation(QString,double,double,double,double);
     void dataForApproximation(QList<double>, QList<int>,QList<double>,QList<double>,QList<double>,QList<double>);
 void getCoordinate(QGeoCoordinate);
 signals:

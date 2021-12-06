@@ -45,6 +45,7 @@ public:
 private:
     QStringList sens0,sens1,sens2,sens3,sens4,sens5,sens6,sens7,sens8,sens9;
     QStringList att03,attso2,attno2,attpm10;
+    QString airCondition;
     QGeoCoordinate sensor0,sensor1,sensor2,sensor3,sensor4,sensor5,sensor6,sensor7,sensor8,sensor9;
     QMutex mtx;
     QList<double> ret;
@@ -63,7 +64,7 @@ private:
     void calcAttribute(int);
     double calcAverage(QStringList);
     void encapsulation(QStringList);
-
+    double passGood,passFair,passPoor,passVeryPoor,passExPoor;
     unsigned short int getLeaf(struct node* node);
     int calheight(struct node *p);
     int bf(struct node *n);
@@ -87,7 +88,7 @@ public slots:
 signals:
     void dataApptoxiamtion(QList<double>, QList<int> ,QList<double>,QList<double>,QList<double>,QList<double>);
     void finished();
-    void dataToUI(bool,double O3,double NO2,double SO2,double PM10);
+    void dataToUI(QString ,double O3,double NO2,double SO2,double PM10);
 //    void location(QGeoCoordinate);
     void dataToMarker(QGeoCoordinate);
 };

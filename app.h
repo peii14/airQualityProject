@@ -17,7 +17,7 @@ class App : public QApplication{
 public:
     MainWindow *w;
     Calculation *c;
-    Marker *m;
+//    Marker *m;
     Read *r;
     App(int &argc, char** argv) ;
     ~App();

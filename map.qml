@@ -14,7 +14,7 @@ Item {
         anchors.fill: parent
         plugin: mapPlugin
         center: marker_model.current;
-        zoomLevel: 14
+        zoomLevel: 10
         Marker{
             coordinate: marker_model.current
         }

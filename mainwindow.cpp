@@ -48,17 +48,14 @@ void MainWindow::searchButton() {
         std::cout<<"Date is not Valid"<<std::endl;
     }
 }
-void MainWindow::datafromCalculation(bool status, double O3, double NO2, double SO2, double PM10) {
+void MainWindow::datafromCalculation(QString status, double O3, double NO2, double SO2, double PM10) {
 
     status = status;
     O3 = O3;
     NO2 = NO2;
     SO2 = SO2;
     PM10 = PM10;
-    if(status)
-        ui->airCondition->setText("Good");
-    else
-        ui->airCondition->setText("Poor");
+    ui->airCondition->setText(status);
     ui->displayNO2->setText(QString::number(NO2));
     ui->displayO3->setText(QString::number(O3));
     ui->displaySO2->setText(QString::number(SO2));
@@ -98,26 +95,95 @@ void MainWindow::dataForApproximation(QList<double>average , QList<int> sensors,
             appSensorstr.append("Sensor 9");
         }
     }
+    ui->sameApproximateTable->clearContents();
 
-    ui->approximateTable->clear();
     ui->approximateTable->setRowCount(numRows);
     ui->approximateTable->setColumnCount(numColumns);
-    for(auto r=0;r<appSensorstr.size();r++){
-        ui->approximateTable->setItem(r,0,new QTableWidgetItem(appSensorstr.at(r)));
+    ui->sameApproximateTable->setRowCount(numRows);
+    ui->sameApproximateTable->setColumnCount(numColumns);
+    for(auto r=0, iter1=0,iter2=0;r<appSensorstr.size();r++){
+        if(sensors.at(r) != whichSensor){
+            ui->approximateTable->setItem(iter1,0,new QTableWidgetItem(appSensorstr.at(r)));
+            whichTable.push_back(r);
+            iter1++;
+        }
+        else{
+            qDebug()<<appSensorstr.size()<<"nih er";
+            ui->sameApproximateTable->setItem(iter2,0,new QTableWidgetItem(appSensorstr.at(r)));
+            iter2++;
+        }
     }
-    for(auto r=0;r<appo3.size();r++)
-        ui->approximateTable->setItem(r,1,new QTableWidgetItem(QString::number(appo3.at(r))));
-    for(auto r=0;r<appno2.size();r++)
-        ui->approximateTable->setItem(r,2,new QTableWidgetItem(QString::number(appno2.at(r))));
-    for(auto r=0;r<appso2.size();r++)
-        ui->approximateTable->setItem(r,3,new QTableWidgetItem(QString::number(appso2.at(r))));
-    for(auto r=0;r<apppm10.size();r++)
-        ui->approximateTable->setItem(r,4,new QTableWidgetItem(QString::number(apppm10.at(r))));
-    for(auto r=0;r<appAvg.size();r++)
-        ui->approximateTable->setItem(r,5,new QTableWidgetItem(QString::number(appAvg.at(r))));
+    for(auto r=0,iter1=0,iter2=0;r<appo3.size();r++){
+        if(count(whichTable.begin(),whichTable.end(),r)){
+            ui->approximateTable->setItem(iter1,1,new QTableWidgetItem(QString::number(appo3.at(r))));
+            iter1++;
+        }else{
+            ui->sameApproximateTable->setItem(iter2,1,new QTableWidgetItem(QString::number(appo3.at(r))));
+            iter2++;
+        }
+    }
+    for(auto r=0,iter1=0,iter2=0;r<appno2.size();r++){
+    if(count(whichTable.begin(),whichTable.end(),r)){
+        ui->approximateTable->setItem(iter1,2,new QTableWidgetItem(QString::number(appno2.at(r))));
+        iter1++;
+    }else{
+        ui->sameApproximateTable->setItem(iter2,2,new QTableWidgetItem(QString::number(appno2.at(r))));
+        iter2++;
+    }
+    }
+    for(auto r=0,iter1=0,iter2=0;r<appso2.size();r++){
+        if(count(whichTable.begin(),whichTable.end(),r)){
+            ui->approximateTable->setItem(iter1,3,new QTableWidgetItem(QString::number(appso2.at(r))));
+            iter1++;
+        }else{
+            ui->sameApproximateTable->setItem(iter2,3,new QTableWidgetItem(QString::number(appso2.at(r))));
+            iter2++;
+        }
+    }
+    for(auto r=0,iter1=0,iter2=0;r<apppm10.size();r++){
+        if(count(whichTable.begin(),whichTable.end(),r)){
+            ui->approximateTable->setItem(iter1,4,new QTableWidgetItem(QString::number(apppm10.at(r))));
+            iter1++;
+        }else{
+            ui->sameApproximateTable->setItem(iter2,4,new QTableWidgetItem(QString::number(apppm10.at(r))));
+            iter2++;
+        }
+    }
+    for(auto r=0,iter1=0,iter2=0;r<appAvg.size();r++){
+        if(count(whichTable.begin(),whichTable.end(),r)){
+            ui->approximateTable->setItem(iter1,5,new QTableWidgetItem(QString::number(appAvg.at(r))));
+            iter1++;
+        }else{
+            ui->sameApproximateTable->setItem(iter2,5,new QTableWidgetItem(QString::number(appAvg.at(r))));
+            iter2++;
+        }
+    }
 
+    ui->approximateTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Sensors"));
+    ui->approximateTable->setHorizontalHeaderItem(1, new QTableWidgetItem("O3"));
+    ui->approximateTable->setHorizontalHeaderItem(2, new QTableWidgetItem("NO2"));
+    ui->approximateTable->setHorizontalHeaderItem(3, new QTableWidgetItem("SO2"));
+    ui->approximateTable->setHorizontalHeaderItem(4, new QTableWidgetItem("PM10"));
+    ui->approximateTable->setHorizontalHeaderItem(5, new QTableWidgetItem("Average"));
     ui->approximateTable->horizontalHeader()->setVisible(true);
     ui->approximateTable->show();
+
+    ui->sameApproximateTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Sensors"));
+    ui->sameApproximateTable->setHorizontalHeaderItem(1, new QTableWidgetItem("O3"));
+    ui->sameApproximateTable->setHorizontalHeaderItem(2, new QTableWidgetItem("NO2"));
+    ui->sameApproximateTable->setHorizontalHeaderItem(3, new QTableWidgetItem("SO2"));
+    ui->sameApproximateTable->setHorizontalHeaderItem(4, new QTableWidgetItem("PM10"));
+    ui->sameApproximateTable->setHorizontalHeaderItem(5, new QTableWidgetItem("Average"));
+    ui->sameApproximateTable->horizontalHeader()->setVisible(true);
+    ui->sameApproximateTable->show();
+
+    appSensorstr.clear();
+    appAvg.clear();
+    appo3.clear();
+    appso2.clear();
+    apppm10.clear();
+    appno2.clear();
+    whichTable.clear();
 }
 
 

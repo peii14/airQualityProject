@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1326</width>
-    <height>893</height>
+    <width>1328</width>
+    <height>920</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>961</width>
+      <width>941</width>
       <height>691</height>
      </rect>
     </property>
@@ -30,8 +30,8 @@
    <widget class="QLabel" name="airCondition">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>30</y>
+      <x>950</x>
+      <y>20</y>
       <width>301</width>
       <height>121</height>
      </rect>
@@ -50,8 +50,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>970</x>
-      <y>150</y>
+      <x>950</x>
+      <y>140</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -68,7 +68,7 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>970</x>
+      <x>950</x>
       <y>190</y>
       <width>351</width>
       <height>161</height>
@@ -156,10 +156,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>710</y>
+      <x>950</x>
+      <y>400</y>
       <width>371</width>
-      <height>91</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="title">
@@ -171,17 +171,10 @@
        <x>0</x>
        <y>20</y>
        <width>371</width>
-       <height>61</height>
+       <height>74</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>From</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
        <widget class="QLabel" name="label_7">
         <property name="text">
@@ -239,14 +232,21 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>From</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>710</y>
+      <x>970</x>
+      <y>510</y>
       <width>101</width>
       <height>51</height>
      </rect>
@@ -271,8 +271,8 @@
    <widget class="QPushButton" name="searchPushButton">
     <property name="geometry">
      <rect>
-      <x>828</x>
-      <y>710</y>
+      <x>960</x>
+      <y>650</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -281,58 +281,140 @@
      <string>Search</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>970</x>
-      <y>470</y>
-      <width>101</width>
-      <height>17</height>
+      <x>10</x>
+      <y>700</y>
+      <width>811</width>
+      <height>171</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Approximate</string>
+    <property name="currentIndex">
+     <number>0</number>
     </property>
-   </widget>
-   <widget class="QTableWidget" name="approximateTable">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>490</y>
-      <width>311</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <column>
-     <property name="text">
-      <string>Sensors</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>O3</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>NO2</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>SO2</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PM10</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Average</string>
-     </property>
-    </column>
+    <widget class="QWidget" name="Approximate">
+     <attribute name="title">
+      <string>Approximation</string>
+     </attribute>
+     <widget class="QTableWidget" name="approximateTable">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>631</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string notr="true">Sensors</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>O3</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>NO2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>SO2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PM10</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Average</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>20</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Approximation of sensor other than selected sensor within time interval</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Same Sensor</string>
+     </attribute>
+     <widget class="QTableWidget" name="sameApproximateTable">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>631</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Sensors</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>O3</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>NO2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>SO2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PM10</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Average</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>20</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Approximation of the same sensor within time interval</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -340,7 +422,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1326</width>
+     <width>1328</width>
      <height>22</height>
     </rect>
    </property>
