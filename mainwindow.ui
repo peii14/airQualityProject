@@ -281,140 +281,61 @@
      <string>Search</string>
     </property>
    </widget>
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTableWidget" name="approximateTable">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>700</y>
-      <width>811</width>
-      <height>171</height>
+      <y>710</y>
+      <width>631</width>
+      <height>111</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+    <column>
+     <property name="text">
+      <string notr="true">Sensors</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>O3</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>NO2</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>SO2</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PM10</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Average</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>730</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
     </property>
-    <widget class="QWidget" name="Approximate">
-     <attribute name="title">
-      <string>Approximation</string>
-     </attribute>
-     <widget class="QTableWidget" name="approximateTable">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>631</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <column>
-       <property name="text">
-        <string notr="true">Sensors</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>O3</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>NO2</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>SO2</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>PM10</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Average</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>20</y>
-        <width>161</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Approximation of sensor other than selected sensor within time interval</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Same Sensor</string>
-     </attribute>
-     <widget class="QTableWidget" name="sameApproximateTable">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>631</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <column>
-       <property name="text">
-        <string>Sensors</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>O3</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>NO2</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>SO2</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>PM10</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Average</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>20</y>
-        <width>161</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Approximation of the same sensor within time interval</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </widget>
+    <property name="text">
+     <string>Approximation of sensor other than selected sensor within time interval</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
