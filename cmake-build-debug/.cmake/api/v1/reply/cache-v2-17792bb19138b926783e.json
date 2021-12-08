@@ -246,6 +246,22 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_CXX_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C++ compiler during coverage builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG --cs-on --cs-count"
+		},
+		{
 			"name" : "CMAKE_CXX_FLAGS_DEBUG",
 			"properties" : 
 			[
@@ -374,6 +390,22 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_C_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during coverage builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG --cs-on --cs-count"
+		},
+		{
 			"name" : "CMAKE_C_FLAGS_DEBUG",
 			"properties" : 
 			[
@@ -492,6 +524,22 @@
 			],
 			"type" : "STRING",
 			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used for linking binaries during coverage builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : " --cs-on --cs-count"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
@@ -998,6 +1046,22 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the shared libraries linker during coverage builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : " --cs-on --cs-count"
+		},
+		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
 			"properties" : 
 			[
@@ -1108,6 +1172,22 @@
 			],
 			"type" : "STRING",
 			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the static libraries linker during coverage builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : " --cs-on --cs-count"
 		},
 		{
 			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
@@ -1344,6 +1424,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Quick"
+		},
+		{
+			"name" : "Qt5Test_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt5Test."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Test"
 		},
 		{
 			"name" : "Qt5Widgets_DIR",

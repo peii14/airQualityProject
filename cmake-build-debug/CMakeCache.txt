@@ -52,6 +52,9 @@ CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-7
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
 
+//Flags used by the C++ compiler during coverage builds.
+CMAKE_CXX_FLAGS_COVERAGE:STRING=-O3 -DNDEBUG --cs-on --cs-count
+
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
@@ -78,6 +81,9 @@ CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-7
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
 
+//Flags used by the C compiler during coverage builds.
+CMAKE_C_FLAGS_COVERAGE:STRING=-O3 -DNDEBUG --cs-on --cs-count
+
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-g
 
@@ -98,6 +104,9 @@ CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
 //Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
+
+//Flags used for linking binaries during coverage builds.
+CMAKE_EXE_LINKER_FLAGS_COVERAGE:STRING= --cs-on --cs-count
 
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -171,6 +180,9 @@ CMAKE_READELF:FILEPATH=/usr/bin/readelf
 // during all build types.
 CMAKE_SHARED_LINKER_FLAGS:STRING=
 
+//Flags used by the shared libraries linker during coverage builds.
+CMAKE_SHARED_LINKER_FLAGS_COVERAGE:STRING= --cs-on --cs-count
+
 //Flags used by the linker during the creation of shared libraries
 // during DEBUG builds.
 CMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=
@@ -197,6 +209,9 @@ CMAKE_SKIP_RPATH:BOOL=NO
 //Flags used by the linker during the creation of static libraries
 // during all build types.
 CMAKE_STATIC_LINKER_FLAGS:STRING=
+
+//Flags used by the static libraries linker during coverage builds.
+CMAKE_STATIC_LINKER_FLAGS_COVERAGE:STRING= --cs-on --cs-count
 
 //Flags used by the linker during the creation of static libraries
 // during DEBUG builds.
@@ -253,6 +268,9 @@ Qt5QuickWidgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5QuickWidgets
 //The directory containing a CMake configuration file for Qt5Quick.
 Qt5Quick_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Quick
 
+//The directory containing a CMake configuration file for Qt5Test.
+Qt5Test_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Test
+
 //The directory containing a CMake configuration file for Qt5Widgets.
 Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
 
@@ -301,6 +319,8 @@ CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
 CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
 CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_COVERAGE
+CMAKE_CXX_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
 CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_MINSIZEREL
@@ -317,6 +337,8 @@ CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_COVERAGE
+CMAKE_C_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
 CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_MINSIZEREL
@@ -331,6 +353,8 @@ CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_COVERAGE
+CMAKE_EXE_LINKER_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
 CMAKE_EXE_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_MINSIZEREL
@@ -396,6 +420,8 @@ CMAKE_READELF-ADVANCED:INTERNAL=1
 CMAKE_ROOT:INTERNAL=/snap/clion/175/bin/cmake/linux/share/cmake-3.21
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_COVERAGE
+CMAKE_SHARED_LINKER_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
 CMAKE_SHARED_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL
@@ -410,6 +436,8 @@ CMAKE_SKIP_INSTALL_RPATH-ADVANCED:INTERNAL=1
 CMAKE_SKIP_RPATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS
 CMAKE_STATIC_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_COVERAGE
+CMAKE_STATIC_LINKER_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_DEBUG
 CMAKE_STATIC_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL

@@ -331,7 +331,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Approximation of sensor other than selected sensor within time interval</string>
+     <string>Approximation of sensors that has similar behaviours within the timespan</string>
     </property>
     <property name="wordWrap">
      <bool>true</bool>

@@ -71,6 +71,7 @@ void Calculation::searching(QDateTime start,QDateTime end,int sensor) {
     endInterval = end;
     sensors = sensor;
     mtx.unlock();
+    qDebug()<<start<<end;
     Read::readInRange(startInterval,endInterval);
     encapsulation(wordList);
     calcAttribute(sensors);
@@ -399,7 +400,7 @@ void Calculation::calcAttribute(int whichSensor) {
             emit dataToMarker(sensor9);
         }
     }
-    printBT(tree.root);
+//    printBT(tree.root);
     unsigned short int totalData = getLeaf(tree.root);
     if(totalData<5)
         closestKValues(tree.root,findApproximate,totalData);

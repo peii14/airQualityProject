@@ -49,7 +49,6 @@ void MainWindow::searchButton() {
     }
 }
 void MainWindow::datafromCalculation(QString status, double O3, double NO2, double SO2, double PM10) {
-
     status = status;
     O3 = O3;
     NO2 = NO2;

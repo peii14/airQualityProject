@@ -24,7 +24,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -59,13 +58,8 @@ public:
     QGroupBox *groupBox_2;
     QSpinBox *sensorSpinBox;
     QPushButton *searchPushButton;
-    QTabWidget *tabWidget;
-    QWidget *Approximate;
     QTableWidget *approximateTable;
     QLabel *label_8;
-    QWidget *tab_2;
-    QTableWidget *sameApproximateTable;
-    QLabel *label_9;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -196,12 +190,7 @@ public:
         searchPushButton = new QPushButton(centralWidget);
         searchPushButton->setObjectName(QStringLiteral("searchPushButton"));
         searchPushButton->setGeometry(QRect(960, 650, 121, 41));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 700, 811, 171));
-        Approximate = new QWidget();
-        Approximate->setObjectName(QStringLiteral("Approximate"));
-        approximateTable = new QTableWidget(Approximate);
+        approximateTable = new QTableWidget(centralWidget);
         if (approximateTable->columnCount() < 6)
             approximateTable->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -218,36 +207,11 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         approximateTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         approximateTable->setObjectName(QStringLiteral("approximateTable"));
-        approximateTable->setGeometry(QRect(0, 0, 631, 111));
-        label_8 = new QLabel(Approximate);
+        approximateTable->setGeometry(QRect(10, 710, 631, 111));
+        label_8 = new QLabel(centralWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(640, 20, 161, 71));
+        label_8->setGeometry(QRect(650, 730, 161, 71));
         label_8->setWordWrap(true);
-        tabWidget->addTab(Approximate, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        sameApproximateTable = new QTableWidget(tab_2);
-        if (sameApproximateTable->columnCount() < 6)
-            sameApproximateTable->setColumnCount(6);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        sameApproximateTable->setHorizontalHeaderItem(0, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        sameApproximateTable->setHorizontalHeaderItem(1, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        sameApproximateTable->setHorizontalHeaderItem(2, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        sameApproximateTable->setHorizontalHeaderItem(3, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        sameApproximateTable->setHorizontalHeaderItem(4, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        sameApproximateTable->setHorizontalHeaderItem(5, __qtablewidgetitem11);
-        sameApproximateTable->setObjectName(QStringLiteral("sameApproximateTable"));
-        sameApproximateTable->setGeometry(QRect(0, 0, 631, 131));
-        label_9 = new QLabel(tab_2);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(640, 20, 161, 71));
-        label_9->setWordWrap(true);
-        tabWidget->addTab(tab_2, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -261,9 +225,6 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
-
-        tabWidget->setCurrentIndex(0);
-
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -296,22 +257,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "PM10", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem4 = approximateTable->horizontalHeaderItem(5);
         ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Average", Q_NULLPTR));
-        label_8->setText(QApplication::translate("MainWindow", "Approximation of sensor other than selected sensor within time interval", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(Approximate), QApplication::translate("MainWindow", "Approximation", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem5 = sameApproximateTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "Sensors", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem6 = sameApproximateTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "O3", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem7 = sameApproximateTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "NO2", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem8 = sameApproximateTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "SO2", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem9 = sameApproximateTable->horizontalHeaderItem(4);
-        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "PM10", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem10 = sameApproximateTable->horizontalHeaderItem(5);
-        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "Average", Q_NULLPTR));
-        label_9->setText(QApplication::translate("MainWindow", "Approximation of the same sensor within time interval", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Same Sensor", Q_NULLPTR));
+        label_8->setText(QApplication::translate("MainWindow", "Approximation of sensors that has similar behaviours within the timespan", Q_NULLPTR));
     } // retranslateUi
 
 };
