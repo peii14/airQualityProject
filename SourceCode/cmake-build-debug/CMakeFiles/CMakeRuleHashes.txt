@@ -1,0 +1,9 @@
+# Hashes of file build rules.
+65b428850fef27420f78bb8101d8d492 CMakeFiles/airQualityProject_autogen
+834a2d50bba560af7da5b7baee303c88 CMakeFiles/airQualityProject_node_autogen
+16f1a2eef7139b856c9e9a1d3a8b97c8 include/moc_app.cpp
+7258415828ce267a6cb6e8e3518ff2d8 include/moc_calculation.cpp
+86907b36ceec02f941a880f91e1ff284 include/moc_mainwindow.cpp
+6bf729a4323dc3d57932bc76e55f2fc1 include/moc_marker.cpp
+228a9ce3afdf9d4f7b85816c4383c1ec include/moc_read.cpp
+0a5bce83f53bbaf452e60213f07099ac ui_mainwindow.h

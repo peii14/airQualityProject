@@ -1,0 +1,5 @@
+-I/home/pei/Documents/code/cpp/airQualityProject/SourceCode
+-I/home/pei/Documents/code/cpp/airQualityProject/SourceCode/cmake-build-debug
+-o
+/home/pei/Documents/code/cpp/airQualityProject/SourceCode/cmake-build-debug/include/moc_read.cpp
+/home/pei/Documents/code/cpp/airQualityProject/SourceCode/include/read.h
