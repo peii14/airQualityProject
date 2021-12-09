@@ -4,7 +4,8 @@
 
 #include "read.h"
 Read::Read() {
-
+    path.append(qApp->applicationDirPath());
+    path.replace(QString("cmake-build-debug"), QString("test.csv"));
 }
 Read::~Read() {
 
@@ -18,7 +19,7 @@ Read::~Read() {
 //MAJOR BUG
 void Read::readInRange(QDateTime start, QDateTime end) {
     qDebug()<<"isReading";
-    QFile file("/home/pei/Documents/code/cpp/airQualityProject/test.csv");
+    QFile file(path);
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << file.errorString();
         return;

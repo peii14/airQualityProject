@@ -21,6 +21,8 @@
 using namespace std;
 
 class Read{
+private:
+    QString path;
 protected:
     QStringList wordList;
     void readInRange(QDateTime,QDateTime);
