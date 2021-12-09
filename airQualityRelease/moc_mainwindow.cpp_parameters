@@ -1,0 +1,5 @@
+-I/home/pei/Documents/code/cpp/airQualityProject
+-I/home/pei/Documents/code
+-o
+/home/pei/Documents/code/cpp/airQualityProject/moc_mainwindow.cpp
+/home/pei/Documents/code/cpp/airQualityProject/mainwindow.h

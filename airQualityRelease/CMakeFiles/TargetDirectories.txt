@@ -1,0 +1,6 @@
+/home/pei/Documents/code/CMakeFiles/rebuild_cache.dir
+/home/pei/Documents/code/CMakeFiles/edit_cache.dir
+/home/pei/Documents/code/CMakeFiles/airQualityProject.dir
+/home/pei/Documents/code/CMakeFiles/airQualityProject_node.dir
+/home/pei/Documents/code/CMakeFiles/airQualityProject_autogen.dir
+/home/pei/Documents/code/CMakeFiles/airQualityProject_node_autogen.dir
