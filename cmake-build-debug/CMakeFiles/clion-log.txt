@@ -1,4 +1,0 @@
-/snap/clion/175/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/pei/Documents/code/cpp/airQualityProject
--- Configuring done
--- Generating done
--- Build files have been written to: /home/pei/Documents/code/cpp/airQualityProject/cmake-build-debug
