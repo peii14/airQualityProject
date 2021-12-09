@@ -33,7 +33,7 @@ private:
     QList<double> appAvg,appo3,appno2,appso2,apppm10;
     Ui::MainWindow *ui;
     Marker marker_model;
-    QString path = "/home/pei/Documents/code/cpp/airQualityProject/map.qml";
+    QString path = "/home/pei/Documents/code/cpp/airQualityProject/src/map.qml";
     QDateTime start,end;
     int whichSensor;
     std::string latitude,longitude;

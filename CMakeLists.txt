@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.10)
 project(airQualityProject)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
-
+set(CMAKE_CXX_FLAGS "-Wall -fPIC -std=c++11")
 #find_package(Qt5Test REQUIRED)
 find_package(Qt5Core CONFIG REQUIRED)
 find_package(Qt5Concurrent CONFIG REQUIRED)
@@ -21,14 +21,15 @@ FIND_PACKAGE(Qt5Widgets REQUIRED)
 FIND_PACKAGE(Qt5Qml REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #set(QRC_RESOURCES ${CMAKE_CURRENT_SOURCE_DIR} resource.qrc)
 
-file(GLOB MAPS_SRCS *.cpp)
-file(GLOB MAPS_HDRS *.h)
+file(GLOB MAPS_SRCS src/*.cpp)
+file(GLOB MAPS_HDRS include/*.h)
 
 #enable_testing(true)
-qt5_wrap_ui(QT_MOC_UI ui/mainwindow.ui)
+qt5_wrap_ui(QT_MOC_UI src/mainwindow.ui)
 qt5_wrap_cpp(QT_MOC_HPP
         ${MAPS_HDRS}
         )
@@ -50,6 +51,7 @@ add_library(${PROJECT_NAME}
         )
 #add_executable(airQualityProject main.cpp)
 add_executable(${PROJECT_NAME}_node ${MAPS_SRCS} ${QT_MOC_HPP} ${QT_RESOURCES} ${QRC_RESOURCES})
+target_compile_options( ${PROJECT_NAME}_node PRIVATE -fPIC)
 #add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 #add_test(NAME ${PROJECT_NAME}_node COMMAND ${PROJECT_NAME}_node )
 target_link_libraries(${PROJECT_NAME}_node
